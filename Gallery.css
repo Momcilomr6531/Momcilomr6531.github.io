@@ -60,3 +60,90 @@ h1 {
 .center {
 text-align: center;
 }
+
+
+.hover_rotate { 
+  width: 260px;
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+  transition : transform 3s; 
+transition-timing-function: linear;
+}
+
+.hover_rotate:hover {
+transform: rotate(45deg); 
+
+}
+
+
+.hover_inflate{
+  width: 260px;
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+  transition : transform 2s; 
+  transition-timing-function: ease-in;
+}
+
+.hover_inflate:hover{
+  transform: scale(1.5,1.5); 
+
+}
+
+
+.hover_chaos { 
+  width: 260px;
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+  transition: transform 2s; 
+  transition-timing-function: ease-in;
+}
+
+.hover_chaos:hover{ 
+  transform: rotateY(360deg); 
+ 
+}
+
+.hover_fade { 
+  width: 260px;
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+  transition: opacity 3s, transform 5s;
+  transition-timing-function: ease-in;
+}
+
+.hover_fade:hover { 
+  opacity: 0.2; 
+  transform: rotateZ(360deg); 
+}
+
+
+.hover_matrix {
+  width: 260px;
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+  transition: transform 3s;
+  transition-timing-function: ease-in;
+}
+
+.hover_matrix:hover{
+  transform: matrix(2, -0.3, 0, 1, 0, 0); 
+ 
+}
+
+.hover_move{
+  width: 260px;
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+  transition: transform 3s; 
+  transition-timing-function: ease-in;
+}
+
+.hover_move:hover{
+transform: translate(-200px, -200px); 
+}
