@@ -1,67 +1,120 @@
 h1 {
+  text-align: center;
+}
 
-
+.center {
   text-align: center;
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0px;
-  }
-
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+}
 
 main {
   margin-left: 20px;
   margin-right: 20px;
 }
 
-
-
-.navbar ul{
+.navbar ul {
   list-style-type: none;
   background-color: grey;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
 }
 
-.navbar a{ 
+.navbar a {
   color: white;
   text-decoration: none;
   padding: 15px;
   display: block;
   text-align: center;
-
-
 }
 
-.navbar a:hover{ 
-  background-color: rgb(28, 28, 42);}  
+.navbar a:hover {
+  background-color: rgb(28, 28, 42);
+}
 
-
-.navbar li{ 
+.navbar li {
   float: left;
 }
 
-
 img {
-
   max-width: 200px;
   max-height: 150px;
 }
 
-.box{
-  
+.box-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.box {
+  flex: 1 1 250px;
   border: 5px solid black;
   background-color: lightgrey;
   padding: 40px;
-  margin: 40px;
-  width: 250px;
+  margin: 20px;
+  max-width: 250px;
+  min-width: 250px;
   height: 150px;
   text-align: center;
 }
 
 .active {
- background-color: rgb(72, 72, 86); 
+  background-color: rgb(72, 72, 86);
 }
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+@media (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+  .box-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .box {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* still trying to make two columns of the boxes ahahha did not finish in time */
