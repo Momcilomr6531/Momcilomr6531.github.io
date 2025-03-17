@@ -1,31 +1,89 @@
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(152, 246, 152);
-  }
-  
-  .container {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-  }
-  
-  h1 {
-    color: black;
-    font-size: 24px;
-  }
-  
-  p {
-    color: gray;
-    font-size: 16px;
-  }
-  
-  .highlight {
-    background-color: yellow;
-    padding: 5px;
-    border-radius: 3px;
-  }
-  
-  img {
-    width: 100%;
-    height: auto;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.navbar li {
+  margin: 0 20px;
+}
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.navbar a:hover {
+  color: #0071e3;
+}
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background-image: url('future.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #0071e3;
+}
+.hero h1 {
+  font-size: 3em;
+  margin: 0;
+}
+.hero p {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+.content-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 50px 20px;
+}
+.content-box {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.content-box:hover {
+  transform: translateY(-10px);
+}
+.content-box img {
+  width: 100%;
+  border-radius: 10px;
+}
+.content-box h2 {
+  font-size: 1.5em;
+  margin: 15px 0;
+}
+.content-box a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0071e3;
+}
+
+.black {
+ color: black; 
+}
+
+.fade { 
+  opacity: 50%;
+}
