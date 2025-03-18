@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="vote.css">
+    <script>
+        let votes = { advocate: 0, against: 0 };
+
+        function vote(option) {
+            votes[option]++;
+            document.getElementById('advocate-count').innerText = votes.advocate;
+            document.getElementById('against-count').innerText = votes.against;
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="learncybernetic.html">Back to Cybernetics</a></li>
+        </ul>
+    </nav>
+    
+    <div class="content-container vote-container">
+        <h1>Do You Support Cybernetics?</h1>
+        <p>Cast your vote below:</p>
+        <div class="button-container">
+            <button class="btn" onclick="vote('advocate')">✅ Advocate</button>
+            <button class="btn" onclick="vote('against')">❌ Against</button>
+        </div>
+        <div class="vote-results">
+            <p>✅ Advocate: <span id="advocate-count">0</span></p>
+            <p>❌ Against: <span id="against-count">0</span></p>
+        </div>
+    </div>
+</body>
+</html>

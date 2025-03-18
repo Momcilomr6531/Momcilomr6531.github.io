@@ -31,12 +31,10 @@ body {
 .navbar a:hover {
   color: #0071e3;
 }
+
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background-image: url('future.jpg');
-  background-size: cover;
-  background-position: center;
   color: #0071e3;
 }
 .hero h1 {
