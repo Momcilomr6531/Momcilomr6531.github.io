@@ -1,47 +1,65 @@
 <!DOCTYPE html>
+
 <head>
     <title>Contact Us</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Linking external CSS for styling -->
 </head>
+
 <body>
+
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <ul>
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li class="fade"><a href="contact.html">Contact</a></li>
+            <li><a href="Home.html">Home</a></li> <!-- Link to Home page -->
+            <li><a href="about.html">About</a></li> <!-- Link to About page -->
+            <li class="fade"><a href="contact.html">Contact</a></li> <!-- Current page highlighted with "fade" class -->
         </ul>
     </nav>
-    
+
+    <!-- Hero Section with heading and subheading -->
     <div class="hero">
         <h1>Get in Touch</h1>
         <p class="black">Have questions, thoughts, or insights? We'd love to hear from you.</p>
     </div>
 
+    <!-- Main Content Section -->
     <div class="content-container">
+
+        <!-- Contact Information Section -->
         <div class="content-box" style="width: 500px;">
             <h2>Contact Information</h2>
-            <p>Email: <a href="mailto:momcandjelo@gmail.com">info@bioethics.com</a></p>
-            <p>Phone: +1 (323) 220-4444</p>
-            <p>Address: Ethical Avenue, New York</p>
+            <p>Email: <a href="mailto:momcandjelo@gmail.com">info@bioethics.com</a></p> <!-- Email link -->
+            <p>Phone: +1 (323) 220-4444</p> <!-- Phone number -->
+            <p>Address: Ethical Avenue, New York</p> <!-- Physical address -->
         </div>
-        
+
+        <!-- Contact Form Section -->
         <div class="content-box" style="width: 500px;">
             <h2>Send Us a Message</h2>
-            <form action="#" method="post">
+
+            <!-- Form for submitting messages -->
+            <form action="#" method="post"> <!-- Action is "#" as placeholder, method set to POST -->
+                
+                <!-- Name Field -->
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required> <!-- Required name input field -->
                 
+                <!-- Email Field -->
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required> <!-- Required email input field -->
                 
+                <!-- Message Field -->
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <textarea id="message" name="message" rows="4" required></textarea> <!-- Required message field -->
                 
-                <button type="submit" class="btn">Send Message</button>
+                <!-- Submit Button -->
+                <button type="submit" class="btn">Send Message</button> 
             </form>
         </div>
+
     </div>
+
 </body>
 </html>
 
-
+<!-- The <form> element and related functionalities were sourced from W3Schools' HTML Forms tutorial: https://www.w3schools.com/html/html_forms.asp -->

@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybernetics Vote</title>
     <link rel="stylesheet" href="vote.css">
     <script>
+        // Initialize vote counts for both options
         let votes = { advocate: 0, against: 0 };
 
+        // Function to handle voting logic
         function vote(option) {
+            // Increment the selected vote option
             votes[option]++;
+            
+            // Update the displayed vote counts for both options
             document.getElementById('advocate-count').innerText = votes.advocate;
             document.getElementById('against-count').innerText = votes.against;
+
+            // Optional: Provide feedback after voting
+            document.getElementById('vote-feedback').innerText = "Thank you for voting!";
         }
     </script>
 </head>
 <body>
+    <!-- Navbar for easy navigation -->
     <nav class="navbar">
         <ul>
             <li><a href="Home.html">Home</a></li>
@@ -20,17 +32,25 @@
         </ul>
     </nav>
     
+    <!-- Main content for the voting page -->
     <div class="content-container vote-container">
         <h1>Do You Support Cybernetics?</h1>
         <p>Cast your vote below:</p>
+
+        <!-- Buttons for voting options -->
         <div class="button-container">
             <button class="btn" onclick="vote('advocate')">✅ Advocate</button>
             <button class="btn" onclick="vote('against')">❌ Against</button>
         </div>
+
+        <!-- Display the current vote count for both options -->
         <div class="vote-results">
             <p>✅ Advocate: <span id="advocate-count">0</span></p>
             <p>❌ Against: <span id="against-count">0</span></p>
         </div>
+
+        <!-- Feedback message after voting -->
+        <p id="vote-feedback" class="vote-feedback"></p>
     </div>
 </body>
 </html>

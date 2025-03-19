@@ -1,79 +1,104 @@
+/* General body styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f7;
-    color: #1d1d1f;
-}
-.navbar ul {
-    display: flex;
-    justify-content: center;
-    background-color: #fff;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-.navbar li {
-    list-style: none;
-    margin: 0 20px;
-}
-.navbar a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-.navbar a:hover {
-    color: #0071e3;
-}
-.content-container {
-    text-align: center;
-    max-width: 800px;
-    margin: 80px auto;
-    padding: 20px;
-}
-.feature-image {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #555;
-}
-blockquote {
-    font-style: italic;
-    color: #666;
-    border-left: 4px solid #0071e3;
-    padding-left: 15px;
-    margin: 20px 0;
-}
-.button-container {
-    margin-top: 30px;
-}
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    margin: 10px;
-    text-decoration: none;
-    font-size: 1em;
-    font-weight: bold;
-    color: #fff;
-    background-color: #0071e3;
-    border-radius: 8px;
-    transition: background 0.3s;
-}
-.btn.secondary {
-    background-color: #555;
-}
-.btn:hover {
-    background-color: #005bb5;
+    font-family: Arial, sans-serif; /* Sets the font for the entire page */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    background-color: #f5f5f7; /* Sets a light gray background color */
+    color: #1d1d1f; /* Sets the text color to a dark shade */
 }
 
-.fade { 
-    opacity: 50%;
+/* Navbar styling */
+.navbar ul {
+    display: flex; /* Uses Flexbox to arrange navbar items horizontally */
+    justify-content: center; /* Centers the navbar items */
+    background-color: #fff; /* Sets navbar background color to white */
+    padding: 15px 0; /* Adds padding above and below navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a floating effect */
+}
+
+.navbar li {
+    list-style: none; /* Removes default list styling */
+    margin: 0 20px; /* Adds horizontal margin between navbar items */
+}
+
+.navbar a {
+    text-decoration: none; /* Removes underline from links */
+    color: #333; /* Sets link color to dark gray */
+    font-weight: bold; /* Makes the text bold */
+    transition: color 0.3s; /* Smooth transition for color change on hover */
+}
+
+.navbar a:hover {
+    color: #0071e3; /* Changes link color to blue on hover */
+}
+
+/* Content container styling */
+.content-container {
+    text-align: center; /* Centers text inside the container */
+    max-width: 800px; /* Limits the container width to 800px */
+    margin: 80px auto; /* Centers the container horizontally and adds top and bottom margin */
+    padding: 20px; /* Adds padding inside the container */
+}
+
+/* Feature image styling */
+.feature-image {
+    width: 100%; /* Makes the image take up the full width of its container */
+    border-radius: 20px; /* Rounds the corners of the image */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the image */
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5em; /* Increases the size of the main heading */
+    margin-bottom: 10px; /* Adds space below the heading */
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1.2em; /* Sets paragraph text size */
+    line-height: 1.6; /* Increases line spacing for better readability */
+    color: #555; /* Sets text color to a medium gray */
+}
+
+/* Blockquote styling */
+blockquote {
+    font-style: italic; /* Makes the quote text italic */
+    color: #666; /* Sets text color to light gray */
+    border-left: 4px solid #0071e3; /* Adds a blue left border to the blockquote */
+    padding-left: 15px; /* Adds padding to the left of the blockquote text */
+    margin: 20px 0; /* Adds vertical margin around the blockquote */
+}
+
+/* Button container */
+.button-container {
+    margin-top: 30px; /* Adds space above the button container */
+}
+
+/* Button styling */
+.btn {
+    display: inline-block; /* Makes the button behave like an inline element */
+    padding: 12px 24px; /* Adds padding inside the button */
+    margin: 10px; /* Adds space around the button */
+    text-decoration: none; /* Removes underline from the link */
+    font-size: 1em; /* Sets the font size */
+    font-weight: bold; /* Makes the text bold */
+    color: #fff; /* Sets text color to white */
+    background-color: #0071e3; /* Sets button background color to blue */
+    border-radius: 8px; /* Rounds the corners of the button */
+    transition: background 0.3s; /* Smooth transition for background color change on hover */
+}
+
+/* Secondary button styling */
+.btn.secondary {
+    background-color: #555; /* Sets secondary button background color to dark gray */
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    background-color: #005bb5; /* Changes background color to a darker blue when hovered */
+}
+
+/* Fade class for reduced opacity */
+.fade {
+    opacity: 50%; /* Makes elements with this class 50% transparent */
 }
