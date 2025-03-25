@@ -1,0 +1,109 @@
+body {
+    font-family: 'Poppins', sans-serif; /* Sets the font for the page */
+    text-align: center; /* Centers text within the body */
+    background-color: #f4f4f9; /* Light grayish background color */
+    color: #333; /* Dark gray text color for readability */
+    margin: 0; /* Removes default margin */
+    padding: 20px; /* Adds padding around content */
+}
+
+h1 {
+    margin-bottom: 20px; /* Adds space below the heading */
+    font-size: 2rem; /* Sets font size to 2 rem units */
+}
+
+.container {
+    width: 350px; /* Sets a fixed width */
+    margin: 20px auto; /* Centers container and adds top/bottom margin */
+    padding: 20px; /* Adds inner space */
+    border-radius: 10px; /* Rounds the corners */
+    background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Gradient background */
+    color: white; /* White text for contrast */
+    font-weight: bold; /* Makes text bold */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+}
+
+.flexbox {
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers items horizontally */
+    gap: 15px; /* Adds space between flex items */
+    margin-top: 20px; /* Adds space above */
+}
+
+.box {
+    width: 60px; /* Sets width */
+    height: 60px; /* Sets height */
+    background: #ff6b6b; /* Red background */
+    color: white; /* White text */
+    display: flex; /* Uses flexbox for centering */
+    align-items: center; /* Centers vertically */
+    justify-content: center; /* Centers horizontally */
+    font-weight: bold; /* Makes text bold */
+    border-radius: 8px; /* Rounds corners */
+    transition: transform 0.3s; /* Smooth transform effect */
+}
+
+.box:hover {
+    transform: scale(1.1); /* Slightly enlarges the box on hover */
+}
+
+.relative-box {
+    position: relative; /* Positions relative to its normal position */
+    width: 200px; /* Sets width */
+    background-color: #ffcc00; /* Yellow background */
+    padding: 15px; /* Adds inner space */
+    border-radius: 8px; /* Rounds corners */
+    margin: 20px auto; /* Centers with top/bottom margin */
+}
+
+.fixed-box {
+    position: fixed; /* Stays fixed on the screen */
+    bottom: 20px; /* Positions 20px from the bottom */
+    right: 20px; /* Positions 20px from the right */
+    background: #d90429; /* Red background */
+    padding: 15px; /* Adds inner space */
+    color: white; /* White text */
+    border-radius: 8px; /* Rounds corners */
+    font-weight: bold; /* Makes text bold */
+}
+
+.absolute-box {
+    position: absolute; /* Positioned relative to the nearest positioned ancestor */
+    top: 100px; /* 100px from the top of its containing block */
+    left: 50px; /* 50px from the left */
+    width: 150px; /* Sets width */
+    background: #6a0572; /* Dark purple background */
+    color: white; /* White text */
+    padding: 15px; /* Adds inner space */
+    border-radius: 8px; /* Rounds corners */
+    font-weight: bold; /* Makes text bold */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds depth */
+}
+
+#transform-box {
+    width: 100px; /* Sets width */
+    height: 100px; /* Sets height */
+    background: #1e90ff; /* Blue background */
+    margin: 20px auto; /* Centers element */
+    border-radius: 10px; /* Rounds corners */
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+#transform-box:hover {
+    transform: rotate(45deg) scale(1.1); /* Rotates and scales on hover */
+}
+
+button {
+    background: #38a3a5; /* Teal background */
+    color: white; /* White text */
+    border: none; /* Removes default border */
+    padding: 10px 20px; /* Adds padding */
+    font-size: 1rem; /* Sets font size */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    border-radius: 5px; /* Rounds corners */
+    transition: background 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background: #22577a; /* Darker blue background on hover */
+}

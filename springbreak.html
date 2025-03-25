@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Declares the document as HTML5 -->
+    <meta charset="UTF-8">
+    
+    <!-- Ensures the page scales properly on different devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Sets the title of the webpage -->
+    <title>CSS Fundamentals Showcase</title>
+    
+    <!-- Links an external CSS file for styling -->
+    <link rel="stylesheet" href="springbreak.css">
+    
+    <!-- JavaScript for interactivity -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Selects the button and text elements
+            const button = document.getElementById("js-button");
+            const textElement = document.getElementById("js-text");
+            
+            // Adds a click event listener to the button
+            button.addEventListener("click", function() {
+                // Toggles the text content when the button is clicked
+                if (textElement.innerText === "Text changed!") {
+                    textElement.innerText = "Click the button to change this text";
+                } else {
+                    textElement.innerText = "Text changed!";
+                }
+            });
+        });
+    </script>
+    
+    <style>
+       /* Placeholder for additional internal CSS */
+    </style>
+</head>
+<body>
+
+    <!-- Main heading -->
+    <h1>CSS Fundamentals Showcase</h1>
+
+    <!-- Container Example -->
+    <section class="container-section">
+        <h2>Container Example</h2>
+        <!-- A container with padding and a gradient background -->
+        <div class="container">This is a container with padding and a gradient background.</div>
+    </section>
+
+    <!-- Flexbox Example -->
+    <section class="flexbox-section">
+        <h2>Flexbox Example</h2>
+        <!-- A flexbox container that arranges items in a row -->
+        <div class="flexbox">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+    </section>
+
+    <!-- Positioning Example -->
+    <section class="position-section">
+        <h2>Positioning Example</h2>
+        <!-- Box with relative positioning (moves relative to its normal position) -->
+        <div class="relative-box">Relative Position</div>
+        <!-- Box with absolute positioning (positions relative to the nearest positioned ancestor) -->
+        <div class="absolute-box">Absolute Position</div>
+        <!-- Box with fixed positioning (stays in place while scrolling) -->
+        <div class="fixed-box">Fixed Position</div>
+    </section>
+
+    <!-- Transform Example -->
+    <section class="transform-section">
+        <h2>Transform (Hover to Rotate & Scale)</h2>
+        <!-- A box that rotates and scales when hovered over -->
+        <div id="transform-box"></div>
+    </section>
+
+    <!-- JavaScript Interaction Example -->
+    <section class="js-section">
+        <h2>JavaScript Interaction</h2>
+        <!-- Text that changes when the button is clicked -->
+        <h2 id="js-text">Click the button to change this text</h2>
+        <button id="js-button">Change Text</button>
+    </section>
+
+</body>
+</html>
