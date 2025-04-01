@@ -6,30 +6,44 @@
 <body>
 	<h1> Momcilo's website</h1>
 	<header class="header"> 
-    <nav class="navbar">
-    	<ul>
-    		<li class="active"><a href="./index.html">Home</a></li>
-    		<li><a href="./about1.html">About</a></li>
-    		<li><a href="./contact1.html">Contact</a></li>
-			<li><a href="./Research.html">Assignments</a></li>
-			<li><a href="./Class_notes.html">Class notes</a></li>
-			<li><a href = "Home.html"> Midterm Project </a></li>
-    	</ul>
-    </nav>
-</header>
+    	<nav class="navbar">
+    		<ul>
+    			<li class="active"><a href="./index.html">Home</a></li>
+    			<li><a href="./about1.html">About</a></li>
+    			<li><a href="./contact1.html">Contact</a></li>
+				<li><a href="./Research.html">Assignments</a></li>
+				<li><a href="./Class_notes.html">Class notes</a></li>
+				<li><a href = "Home.html"> Midterm Project </a></li>
+    		</ul>
+    	</nav>
+	</header>
 
-<main>
-	<h2 class="center"> Welcome to my home page!</h2>
-	<p class="center"> To get to know me, I'll put a few pictures of some things I love: </p>
+	<p id="demo"></p> <!-- This is where the text should appear -->
 
-	<div class="box-container">
-		<div class="box"> My family: <img src="family.jpeg" alt="Family"></div>
-		<div class="box"> Football: <img src="Football.jpeg" alt="Football"></div>
-		<div class="box"> Basketball: <img src="jokic.jpeg" alt="Basketball"></div>
-		<div class="box"> Food: <img src="chicken.jpeg" alt="Food"></div>
-		<div class="box"> Friends: <img src="friends.jpeg" alt="Friends"></div>
-		<div class="box"> And of course, Vikings fighting dragons: <img src="viking.jpeg" alt="Vikings"></div>
-	</div>
-</main>
+	<main>
+		<h2 class="center"> Welcome to my home page!</h2>
+		<p class="center"> To get to know me, I'll put a few pictures of some things I love: </p>
+
+		<div class="box-container">
+			<div class="box"> My family: <img src="family.jpeg" alt="Family"></div>
+			<div class="box"> Football: <img src="Football.jpeg" alt="Football"></div>
+			<div class="box"> Basketball: <img src="jokic.jpeg" alt="Basketball"></div>
+			<div class="box"> Food: <img src="chicken.jpeg" alt="Food"></div>
+			<div class="box"> Friends: <img src="friends.jpeg" alt="Friends"></div>
+			<div class="box"> And of course, Vikings fighting dragons: <img src="viking.jpeg" alt="Vikings"></div>
+		</div>
+		<button id="myButton">Click Me</button>
+	</main>
+
+	<script>
+		
+			document.getElementById("demo").innerHTML = "yo I am a java induced text";
+
+			// Add event listener to the button to show an alert
+			document.getElementById("myButton").addEventListener("click", function() {
+    			alert(10 + 3); // Should show the alert with "13"
+  			});
+		
+	</script>
 </body>
 </html>
