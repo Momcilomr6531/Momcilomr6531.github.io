@@ -15,9 +15,6 @@ const w = 5;
 
 let carName = "toyota";
 
-document.getElementById("car").innerHTML = carName + "'s are my " + a + "th favourite car";
-
-// Now we can say something in html file <h1 id = "car"</h1> 
 
 
 
@@ -44,6 +41,14 @@ function sumValues(a,b) {
     
 }
 
+function fifth(){ 
+
+    document.getElementById("car").innerHTML = carName + "'s are my " + a + "th favourite car";
+
+    // Now we can say something in html file <h1 id = "car"</h1> 
+    
+
+}
 
 var isOn = true; 
 function switchOff(){
