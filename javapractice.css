@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically if needed */
+    height: 100vh; /* Optional: Makes the container take the full viewport height */
+}
+
+button {
+    margin: 10px; /* Add space between buttons */
+    padding: 10px 20px; /* Improve button size */
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Fix box-shadow: should have offset values */
+}
