@@ -4,9 +4,9 @@ console.log("My first JavaScript assignment");
 document.getElementById("output").textContent = "I just modified this element with JavaScript";
 
 // Task 2: Variable Practice
-let yourName = "John"; // Change this to your name
+let yourName = "Momcilo"; // Change this to your name
 let yourAge = 21;
-let yourNumber = 3.14;
+let yourNumber = 7.3;
 console.log(`My name is ${yourName}, I am ${yourAge} years old, and my favorite number is ${yourNumber}.`);
 
 // Task 3: Calculator Function
