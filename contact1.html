@@ -34,8 +34,25 @@
 <body>
     
     <h1>
-
-Contact me at mr6531@nyu.edu
+		<form action="https://formspree.io/f/yourFormID" method="POST">
+		  <label>
+			Your Name:
+			<input type="text" name="name" required>
+		  </label>
+		  <br><br>
+		  <label>
+			Your Email:
+			<input type="email" name="email" required>
+		  </label>
+		  <br><br>
+		  <label>
+			Message:
+			<textarea name="message" rows="5" required></textarea>
+		  </label>
+		  <br><br>
+		  <button type="submit">Send</button>
+		</form>
+		
 
     </h1>
 </body>

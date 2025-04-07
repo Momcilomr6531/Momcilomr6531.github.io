@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <h1>Rock, Paper, Scissors</h1>
+
+  <div>
+    <button onclick="playRound('Rock')">Rock</button>
+    <button onclick="playRound('Paper')">Paper</button>
+    <button onclick="playRound('Scissors')">Scissors</button>
+  </div>
+
+  <h2>Results</h2>
+  <p id="player-choice">Your choice: </p>
+  <p id="computer-choice">Computer's choice: </p>
+  <p id="result">Result: </p>
+
+  <h2>Score</h2>
+  <p id="wins">Wins: 0</p>
+  <p id="losses">Losses: 0</p>
+  <p id="ties">Ties: 0</p>
+
+  <button onclick="restartGame()">Restart Game</button>
+
+  <script>
+    let wins = 0;
+    let losses = 0;
+    let ties = 0;
+
+    function getComputerChoice() {
+      const choices = ['Rock', 'Paper', 'Scissors'];
+      const randomIndex = Math.floor(Math.random() * 3);
+      return choices[randomIndex];
+    }
+
+    function playRound(playerSelection) {
+      const computerSelection = getComputerChoice();
+
+      document.getElementById('player-choice').textContent = "Your choice: " + playerSelection;
+      document.getElementById('computer-choice').textContent = "Computer's choice: " + computerSelection;
+
+      if (playerSelection === computerSelection) {
+        ties++;
+        document.getElementById('result').textContent = "Result: It's a tie!";
+      } else if (
+        (playerSelection === 'Rock' && computerSelection === 'Scissors') ||
+        (playerSelection === 'Scissors' && computerSelection === 'Paper') ||
+        (playerSelection === 'Paper' && computerSelection === 'Rock')
+      ) {
+        wins++;
+        document.getElementById('result').textContent = "Result: You win!";
+      } else {
+        losses++;
+        document.getElementById('result').textContent = "Result: You lose!";
+      }
+
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('wins').textContent = "Wins: " + wins;
+      document.getElementById('losses').textContent = "Losses: " + losses;
+      document.getElementById('ties').textContent = "Ties: " + ties;
+    }
+
+    function restartGame() {
+      wins = 0;
+      losses = 0;
+      ties = 0;
+      updateScore();
+      document.getElementById('player-choice').textContent = "Your choice: ";
+      document.getElementById('computer-choice').textContent = "Computer's choice: ";
+      document.getElementById('result').textContent = "Result: ";
+    }
+  </script>
+</body>
+</html>
