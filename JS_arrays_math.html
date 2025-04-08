@@ -46,6 +46,8 @@
     <button onclick="getIndex()">Get Index of 'Cheese'</button>
     <button onclick="joinArray()">Join Array to String</button>
     <button onclick="splitString()">Split String to Array</button>
+    <button onclick="firstArray()"> What is the first item on the list?</button>
+    <button onclick="changeArray()"> Swap in 'Butter'</button>
   </div>
 
   <h2>Math Playground</h2>
@@ -103,6 +105,10 @@
       }
     }
 
+    function firstArray() {
+      alert(groceries[0]); 
+    }
+
     function joinArray() {
       groceryString = groceries.join(", ");
       alert(`Grocery list as a string: ${groceryString}`);
@@ -117,6 +123,11 @@
       displayGroceries();
       alert("String has been split back into array!");
     }
+
+    function changeArray() {
+    groceries[2] = "Butter"; 
+    displayGroceries(); 
+  }
 
     function runMath() {
       var x = 15;
