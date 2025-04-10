@@ -2,36 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Grocery & Maths ? </title>
+  <title>Grocery & Maths 🍎➕</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
+      text-align: center;
     }
     h1, h2 {
       color: #4CAF50;
     }
     ul {
       list-style-type: square;
+      display: inline-block;
+      text-align: left;
     }
     button {
       margin: 5px;
-      padding: 8px;
+      padding: 10px 15px;
       border: none;
       background-color: #4CAF50;
       color: white;
+      border-radius: 20px;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
       cursor: pointer;
     }
-    .math-output, .array-output {
+    .math-output {
       background-color: #f4f4f4;
       padding: 10px;
       margin-top: 10px;
       border-radius: 5px;
+      display: inline-block;
+      text-align: left;
+    }
+    .grocery-image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
-
-<h> Where </h>
 <body>
 
   <h1>Grocery List</h1>
@@ -46,8 +59,14 @@
     <button onclick="getIndex()">Get Index of 'Cheese'</button>
     <button onclick="joinArray()">Join Array to String</button>
     <button onclick="splitString()">Split String to Array</button>
-    <button onclick="firstArray()"> What is the first item on the list?</button>
-    <button onclick="changeArray()"> Swap in 'Butter'</button>
+    <button onclick="firstArray()">What is the first item on the list?</button>
+    <button onclick="changeArray()">Swap in 'Butter'</button>
+  </div>
+
+  <div>
+    <img class="grocery-image" src="Milk.jpeg" alt="Milk">
+    <img class="grocery-image" src="Banana.jpeg" alt="Bananas">
+    <img class="grocery-image" src="Butter.jpeg" alt="Butter">
   </div>
 
   <h2>Math Playground</h2>
@@ -125,9 +144,9 @@
     }
 
     function changeArray() {
-    groceries[2] = "Butter"; 
-    displayGroceries(); 
-  }
+      groceries[2] = "Butter"; 
+      displayGroceries(); 
+    }
 
     function runMath() {
       var x = 15;
@@ -171,5 +190,7 @@
 
     displayGroceries();
   </script>
+
 </body>
 </html>
+
