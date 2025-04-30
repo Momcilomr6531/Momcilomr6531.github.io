@@ -5,46 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bioprinting Vote</title>
     <link rel="stylesheet" href="vote.css">
-    <script>
-        // Initialize vote counts for both options
-        let votes = { advocate: 0, against: 0 };
-
-        // Function to handle the voting logic
-        function vote(option) {
-            // Increment the vote for the selected option
-            votes[option]++;
-            
-            // Update the displayed vote counts for both options
-            document.getElementById('advocate-count').innerText = votes.advocate;
-            document.getElementById('against-count').innerText = votes.against;
-        }
-    </script>
 </head>
 <body>
-    <!-- Navbar for easy navigation -->
+    <!-- Navigation bar -->
     <nav class="navbar">
         <ul>
+            <li><a href="javascript:history.back()" class="navlink">Go Back</a></li>
             <li><a href="Home.html">Home</a></li>
             <li><a href="learnbioprint.html">Back to Bioprinting</a></li>
         </ul>
     </nav>
-    
-    <!-- Main content container for the vote page -->
+
+    <!-- Voting Section -->
     <div class="content-container vote-container">
         <h1>Do You Support Bioprinting?</h1>
         <p>Cast your vote below:</p>
 
-        <!-- Voting buttons for both options -->
+        <!-- Vote Buttons -->
         <div class="button-container">
             <button class="btn" onclick="vote('advocate')">✅ Advocate</button>
             <button class="btn" onclick="vote('against')">❌ Against</button>
         </div>
 
-        <!-- Display the current vote count for both options -->
+        <!-- Vote Results -->
         <div class="vote-results">
             <p>✅ Advocate: <span id="advocate-count">0</span></p>
+            <div class="progress-bar">
+                <div id="advocate-bar" class="bar blue"></div>
+            </div>
+
             <p>❌ Against: <span id="against-count">0</span></p>
+            <div class="progress-bar">
+                <div id="against-bar" class="bar red"></div>
+            </div>
+        </div>
+
+        <!-- Optional: Reset Button for testing -->
+        <div class="button-container">
+            <button class="btn" onclick="resetVotes()">🔄 Reset</button>
         </div>
     </div>
+
+    <!-- Voting Logic -->
+    <script>
+        let votes = {
+            advocate: parseInt(localStorage.getItem('advocateVotes')) || 0,
+            against: parseInt(localStorage.getItem('againstVotes')) || 0
+        };
+
+        function updateDisplay() {
+            const total = votes.advocate + votes.against;
+            const advocatePercent = total ? (votes.advocate / total) * 100 : 0;
+            const againstPercent = total ? (votes.against / total) * 100 : 0;
+
+            document.getElementById('advocate-count').innerText = votes.advocate;
+            document.getElementById('against-count').innerText = votes.against;
+
+            document.getElementById('advocate-bar').style.width = advocatePercent + "%";
+            document.getElementById('against-bar').style.width = againstPercent + "%";
+        }
+
+        function vote(option) {
+            votes[option]++;
+            localStorage.setItem(option + 'Votes', votes[option]);
+            updateDisplay();
+        }
+
+        function resetVotes() {
+            votes = { advocate: 0, against: 0 };
+            localStorage.removeItem('advocateVotes');
+            localStorage.removeItem('againstVotes');
+            updateDisplay();
+        }
+
+        window.onload = updateDisplay;
+    </script>
 </body>
 </html>

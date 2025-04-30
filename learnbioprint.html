@@ -1,15 +1,42 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <title>Bioprinting: A Step Beyond Nature?</title> <!-- Page title displayed in the browser tab -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bioprinting: A Step Beyond Nature?</title>
     <link rel="stylesheet" href="learnmore.css"> <!-- Linking the external CSS file for page styling -->
-</head>
+    <script>
+        // Array of random article links for the "Learn More" section
+        const articles = [
+            { title: "The Basics of Bioprinting", url: "https://example.com/article1" },
+            { title: "Advancements in Bioprinting Technologies", url: "https://example.com/article2" },
+            { title: "Ethical Considerations in Bioprinting", url: "https://example.com/article3" },
+            { title: "The Future of Bioprinting in Medicine", url: "https://example.com/article4" }
+        ];
 
+        // Function to get a random article
+        function getRandomArticle() {
+            const randomIndex = Math.floor(Math.random() * articles.length); // Random index
+            const article = articles[randomIndex]; // Get the random article
+            return `<a href="${article.url}" class="random-article-link">${article.title}</a>`; // Return HTML for the link
+        }
+
+        // Function to display a random article in the "Learn More" section
+        function displayRandomArticle() {
+            const randomArticleElement = document.getElementById('random-article');
+            randomArticleElement.innerHTML = getRandomArticle();
+        }
+
+        // Load a random article when the page loads
+        window.onload = displayRandomArticle;
+    </script>
+</head>
 <body>
 
     <!-- Navigation Bar with links to other sections of the site -->
     <nav class="navbar">
         <ul>
+            <li><a href="javascript:history.back()" class="navlink">Go Back</a> </li>
             <li><a href="Home.html">Home</a></li> <!-- Link to the Home page -->
             <li class="fade"><a href="learnbioprint.html">Bioprinting</a></li> <!-- Current page (Bioprinting) is highlighted with "fade" class -->
             <li><a href="learngenome.html">Genome Editing</a></li> <!-- Link to Genome Editing page -->
@@ -45,6 +72,10 @@
         <p>
             With advancements in this field, could we one day print entire human beings? If so, would they be human in the traditional sense, or something entirely new? The lines blur between healing and creating, between restoring and redefining.
         </p>
+
+        <!-- Random article link section -->
+        <h3>Learn More:</h3>
+        <p id="random-article"></p> <!-- This will display the random article link -->
 
         <!-- Button container with links for further engagement -->
         <div class="button-container">

@@ -7,13 +7,27 @@ body {
     color: #1d1d1f; /* Sets the text color to a dark shade */
 }
 
+
+
+.navbar {
+    position: sticky; /* Makes the navbar sticky */
+    top: 0; /* Ensures the navbar stays at the top of the page */
+    z-index: 1000; /* Ensures the navbar stays on top of other content when scrolling */
+    display: flex; /* Flexbox layout for navbar */
+    justify-content: center; /* Centers the navbar items horizontally */
+    background-color: #fff; /* White background for the navbar */
+    padding: 15px 0; /* Vertical padding for the navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+  }
+
 /* Navbar styling */
 .navbar ul {
-    display: flex; /* Uses Flexbox to arrange navbar items horizontally */
-    justify-content: center; /* Centers the navbar items */
-    background-color: #fff; /* Sets navbar background color to white */
-    padding: 15px 0; /* Adds padding above and below navbar */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a floating effect */
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  margin: 0;
+  list-style: none;
+  /* Remove padding here */
 }
 
 .navbar li {
@@ -102,3 +116,86 @@ blockquote {
 .fade {
     opacity: 50%; /* Makes elements with this class 50% transparent */
 }
+
+/* Add CSS Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Hover animation for links */
+.navbar a {
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    transform: scale(1.1);
+    color: #0071e3;
+}
+
+/* Card hover effect */
+.article-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Additional styling for the content container and buttons */
+.content-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.fade-in-on-scroll {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.fade-in-on-scroll.fade-in {
+    opacity: 1;
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0071e3;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.btn.secondary {
+    background-color: #555;
+}
+
+.btn:hover {
+    background-color: #005bb5;
+}
+
