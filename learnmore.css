@@ -1,123 +1,125 @@
 /* General body styles */
 body {
     font-family: Arial, sans-serif; /* Sets the font for the entire page */
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
-    background-color: #f5f5f7; /* Sets a light gray background color */
-    color: #1d1d1f; /* Sets the text color to a dark shade */
+    margin: 0; /* Removes default browser margin */
+    padding: 0; /* Removes default browser padding */
+    background-color: #f5f5f7; /* Applies a light gray background to the entire page */
+    color: #1d1d1f; /* Sets the default text color to a dark gray for readability */
 }
 
-
-
+/* Sticky top navigation bar */
 .navbar {
-    position: sticky; /* Makes the navbar sticky */
-    top: 0; /* Ensures the navbar stays at the top of the page */
-    z-index: 1000; /* Ensures the navbar stays on top of other content when scrolling */
-    display: flex; /* Flexbox layout for navbar */
-    justify-content: center; /* Centers the navbar items horizontally */
-    background-color: #fff; /* White background for the navbar */
-    padding: 15px 0; /* Vertical padding for the navbar */
+    position: sticky; /* Keeps the navbar fixed at the top as you scroll */
+    top: 0; /* Aligns the navbar to the top edge */
+    z-index: 1000; /* Ensures navbar stays above other content */
+    display: flex; /* Enables flex layout for child elements */
+    justify-content: center; /* Centers child elements horizontally */
+    background-color: #fff; /* White background for contrast with body */
+    padding: 15px 0; /* Adds vertical space inside the navbar */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
-  }
+}
 
-/* Navbar styling */
+/* Navbar list container */
 .navbar ul {
-  display: flex;
-  justify-content: center;
-  background-color: #fff;
-  margin: 0;
-  list-style: none;
-  /* Remove padding here */
+    display: flex; /* Lays out nav items in a row */
+    justify-content: center; /* Centers the nav items within the navbar */
+    background-color: #fff; /* Matches navbar background */
+    margin: 0; /* Removes default margin */
+    list-style: none; /* Removes default bullet points */
 }
 
+/* Navbar list items */
 .navbar li {
-    list-style: none; /* Removes default list styling */
-    margin: 0 20px; /* Adds horizontal margin between navbar items */
+    list-style: none; /* Ensures no bullet points */
+    margin: 0 20px; /* Adds space between items */
 }
 
+/* Navbar links */
 .navbar a {
     text-decoration: none; /* Removes underline from links */
     color: #333; /* Sets link color to dark gray */
-    font-weight: bold; /* Makes the text bold */
-    transition: color 0.3s; /* Smooth transition for color change on hover */
+    font-weight: bold; /* Makes text bold */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
 }
 
+/* Navbar link hover effect */
 .navbar a:hover {
-    color: #0071e3; /* Changes link color to blue on hover */
+    color: #0071e3; /* Changes color on hover to blue */
+    transform: scale(1.1); /* Slightly enlarges the link for interactivity */
 }
 
-/* Content container styling */
+/* Main content wrapper */
 .content-container {
-    text-align: center; /* Centers text inside the container */
-    max-width: 800px; /* Limits the container width to 800px */
-    margin: 80px auto; /* Centers the container horizontally and adds top and bottom margin */
-    padding: 20px; /* Adds padding inside the container */
+    text-align: center; /* Centers all text within */
+    max-width: 800px; /* Limits width for readability */
+    margin: 80px auto; /* Centers container and adds top/bottom spacing */
+    padding: 20px; /* Adds inner spacing */
 }
 
-/* Feature image styling */
+/* Feature image styles */
 .feature-image {
-    width: 100%; /* Makes the image take up the full width of its container */
-    border-radius: 20px; /* Rounds the corners of the image */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the image */
+    width: 100%; /* Makes image fully span container */
+    border-radius: 20px; /* Softens image corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Adds a light drop shadow */
 }
 
-/* Heading styles */
+/* Main heading style */
 h1 {
-    font-size: 2.5em; /* Increases the size of the main heading */
-    margin-bottom: 10px; /* Adds space below the heading */
+    font-size: 2.5em; /* Enlarges main heading */
+    margin-bottom: 10px; /* Adds space below heading */
 }
 
-/* Paragraph styling */
+/* Paragraph text style */
 p {
-    font-size: 1.2em; /* Sets paragraph text size */
-    line-height: 1.6; /* Increases line spacing for better readability */
-    color: #555; /* Sets text color to a medium gray */
+    font-size: 1.2em; /* Increases font size slightly */
+    line-height: 1.6; /* Improves line spacing for readability */
+    color: #555; /* Medium gray color for body text */
 }
 
 /* Blockquote styling */
 blockquote {
-    font-style: italic; /* Makes the quote text italic */
-    color: #666; /* Sets text color to light gray */
-    border-left: 4px solid #0071e3; /* Adds a blue left border to the blockquote */
-    padding-left: 15px; /* Adds padding to the left of the blockquote text */
-    margin: 20px 0; /* Adds vertical margin around the blockquote */
+    font-style: italic; /* Italicizes quote text */
+    color: #666; /* Sets a lighter gray for quotes */
+    border-left: 4px solid #0071e3; /* Adds colored vertical bar for emphasis */
+    padding-left: 15px; /* Adds space between text and border */
+    margin: 20px 0; /* Adds space above and below quote */
 }
 
-/* Button container */
+/* Container for button layout */
 .button-container {
-    margin-top: 30px; /* Adds space above the button container */
+    margin-top: 30px; /* Adds space above buttons */
 }
 
-/* Button styling */
+/* Primary button style */
 .btn {
-    display: inline-block; /* Makes the button behave like an inline element */
-    padding: 12px 24px; /* Adds padding inside the button */
-    margin: 10px; /* Adds space around the button */
-    text-decoration: none; /* Removes underline from the link */
-    font-size: 1em; /* Sets the font size */
-    font-weight: bold; /* Makes the text bold */
-    color: #fff; /* Sets text color to white */
-    background-color: #0071e3; /* Sets button background color to blue */
-    border-radius: 8px; /* Rounds the corners of the button */
-    transition: background 0.3s; /* Smooth transition for background color change on hover */
+    display: inline-block; /* Allows width/height control like block elements */
+    padding: 12px 24px; /* Adds internal spacing */
+    margin: 10px; /* Adds space between buttons */
+    text-decoration: none; /* Removes underline */
+    font-size: 1em; /* Standard font size */
+    font-weight: bold; /* Bold text */
+    color: #fff; /* White text */
+    background-color: #0071e3; /* Bright blue background */
+    border-radius: 8px; /* Rounds corners */
+    transition: background 0.3s; /* Smooth hover transition */
 }
 
-/* Secondary button styling */
+/* Secondary button variant */
 .btn.secondary {
-    background-color: #555; /* Sets secondary button background color to dark gray */
+    background-color: #555; /* Dark gray for secondary emphasis */
 }
 
-/* Hover effect for buttons */
+/* Hover state for all buttons */
 .btn:hover {
-    background-color: #005bb5; /* Changes background color to a darker blue when hovered */
+    background-color: #005bb5; /* Darker blue on hover for feedback */
 }
 
-/* Fade class for reduced opacity */
+/* Generic fade effect via class toggle */
 .fade {
-    opacity: 50%; /* Makes elements with this class 50% transparent */
+    opacity: 50%; /* Half transparency */
 }
 
-/* Add CSS Animations */
+/* Keyframe animation for fade-in effect */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -127,57 +129,43 @@ blockquote {
     }
 }
 
+/* Applies fade-in animation */
 .fade-in {
-    animation: fadeIn 1s ease-out;
+    animation: fadeIn 1s ease-out; /* 1 second fade with ease-out timing */
 }
 
-/* Hover animation for links */
-.navbar a {
-    transition: all 0.3s ease-in-out;
-}
-
-.navbar a:hover {
-    transform: scale(1.1);
-    color: #0071e3;
-}
-
-/* Card hover effect */
+/* Article preview card */
 .article-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff; /* White card background */
+    border-radius: 10px; /* Rounded edges */
+    padding: 20px; /* Inner padding */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth animation on hover */
 }
 
+/* Hover state for article card */
 .article-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px); /* Raises the card slightly */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Deepens the shadow */
 }
 
-/* Smooth scrolling for anchor links */
+/* Enables smooth scroll for in-page anchor links */
 html {
     scroll-behavior: smooth;
 }
 
-/* Additional styling for the content container and buttons */
-.content-container {
-    text-align: center;
-    max-width: 800px;
-    margin: 80px auto;
-    padding: 20px;
-}
-
+/* Reveals elements as they enter the viewport */
 .fade-in-on-scroll {
-    opacity: 0;
-    transition: opacity 1s ease-out;
+    opacity: 0; /* Hidden initially */
+    transition: opacity 1s ease-out; /* Smooth opacity transition */
 }
 
+/* When in view, fade them in */
 .fade-in-on-scroll.fade-in {
     opacity: 1;
 }
 
-/* Button styles */
+/* Repeated button styling block (can be cleaned up later) */
 .btn {
     display: inline-block;
     padding: 12px 24px;
@@ -191,82 +179,88 @@ html {
     transition: background 0.3s;
 }
 
+/* Again defines secondary button (duplicate rule) */
 .btn.secondary {
     background-color: #555;
 }
 
+/* Again defines hover style (duplicate rule) */
 .btn:hover {
     background-color: #005bb5;
 }
 
+/* Special card for random article suggestions */
 .random-article-card {
     max-width: 600px;
-    margin: 40px auto;
+    margin: 40px auto; /* Centers card with vertical spacing */
     padding: 20px 30px;
     background: white;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     text-align: center;
     transition: transform 0.3s ease;
-  }
-  
-  .random-article-card:hover {
+}
+
+/* Lifts the card on hover */
+.random-article-card:hover {
     transform: translateY(-5px);
-  }
-  
-  .random-article-card h3 {
+}
+
+/* Title inside random article card */
+.random-article-card h3 {
     margin-bottom: 15px;
     font-size: 1.6em;
-    color: #0071e3;
-  }
-  
-  .random-article-link a {
+    color: #0071e3; /* Blue heading to match theme */
+}
+
+/* Styling for links inside the card */
+.random-article-link a {
     text-decoration: none;
     font-size: 1.2em;
     font-weight: bold;
     color: #1d1d1f;
-    border-bottom: 2px solid transparent;
+    border-bottom: 2px solid transparent; /* For animation on hover */
     transition: color 0.3s ease, border-color 0.3s ease;
-  }
-  
-  .random-article-link a:hover {
+}
+
+/* Link hover effect */
+.random-article-link a:hover {
     color: #0071e3;
     border-color: #0071e3;
-  }
-  
-  /* Fade-in effect for text blocks */
+}
+
+/* Text fade-in animation setup */
 .fade-in {
     opacity: 0;
-    animation: fadeIn 1.5s ease-in forwards;
-  }
-  
-  /* Slight delay for sequential elements */
-  .fade-in-delay {
+    animation: fadeIn 1.5s ease-in forwards; /* Fades in fully */
+}
+
+/* A variant with longer delay */
+.fade-in-delay {
     opacity: 0;
     animation: fadeIn 2.5s ease-in forwards;
-  }
-  
- 
-  /* Fade-in keyframes */
+}
+
+/* Re-declaration of fadeIn keyframes with extra transform */
 @keyframes fadeIn {
     to {
-      opacity: 1;
-      transform: none;
+        opacity: 1;
+        transform: none;
     }
-  }
-  
-  .fade-in {
+}
+
+/* Fade-in + upward slide (refined version) */
+.fade-in {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 1.2s ease-out forwards;
-  }
-  
-  .fade-in-1  { animation-delay: 0.2s; }
-  .fade-in-2  { animation-delay: 1.5s; }
-  .fade-in-3  { animation-delay: 3s; }
-  .fade-in-4  { animation-delay: 4.5s; }
-  .fade-in-5  { animation-delay: 6s; }
-  .fade-in-6  { animation-delay: 7.5s; }
-  .fade-in-7  { animation-delay: 9s; }
-  
-  
+}
+
+/* Staggered fade-in classes for timed appearance */
+.fade-in-1  { animation-delay: 0.2s; }
+.fade-in-2  { animation-delay: 1.5s; }
+.fade-in-3  { animation-delay: 3s; }
+.fade-in-4  { animation-delay: 4.5s; }
+.fade-in-5  { animation-delay: 6s; }
+.fade-in-6  { animation-delay: 7.5s; }
+.fade-in-7  { animation-delay: 9s; }

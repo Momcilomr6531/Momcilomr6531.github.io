@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Bioethics: The Cost of Innovation</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"> <!-- Sets character encoding -->
+  <title>Bioethics: The Cost of Innovation</title> <!-- Page title -->
+  <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the layout responsive on all devices -->
 </head>
 
 <body>
 
   <!-- Navigation Bar -->
-  <nav class="navbar">
+  <nav class="navbar"> <!-- Top navigation bar -->
     <ul>
-      <li class="fade"><a href="Home.html">Home</a></li>
+      <li class="fade"><a href="Home.html">Home</a></li> <!-- Home page link with fade effect -->
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <!-- Hero Section -->
-  <div class="hero">
+  <div class="hero"> <!-- Large banner section with headline and subtext -->
     <h1>The Further We Innovate, The Further We Deviate</h1>
     <p class="black">Exploring the ethical dilemmas of Bioprinting, Genome Editing, and Cybernetic Enhancements.</p>
   </div>
 
   <!-- Content Section -->
-  <div class="content-container">
+  <div class="content-container"> <!-- Wrapper for all technology boxes -->
 
     <!-- Bioprinting -->
-    <div class="box-wrapper">
-      <div class="bg-image" id="bg1"></div>
-      <div class="content-box" id="box1">
+    <div class="box-wrapper"> <!-- Grouping for background + content -->
+      <div class="bg-image" id="bg1"></div> <!-- Background image to fade out -->
+      <div class="content-box" id="box1"> <!-- Content card -->
         <img src="Bioprint.jpeg" alt="Bioprinting">
         <h2>Bioprinting</h2>
         <p>Synthesizing body parts from scratch. Is this a cure or a step beyond humanity?</p>
-        <a href="learnbioprint.html">Learn More →</a>
-        <p id="bioprint-vote-result" class="vote-summary" style="margin-top: 10px; font-size: 0.9em; color: #555;"></p>
+        <a href="learnbioprint.html">Learn More →</a> <!-- Link to detail page -->
+        <p id="bioprint-vote-result" class="vote-summary" style="margin-top: 10px; font-size: 0.9em; color: #555;"></p> <!-- Vote summary populated by JavaScript -->
       </div>
     </div>
 
@@ -67,32 +67,37 @@
 
   <!-- Animation Script -->
   <script>
-    const boxes = [document.getElementById('box1'), document.getElementById('box2'), document.getElementById('box3')];
+    const boxes = [document.getElementById('box1'), document.getElementById('box2'), document.getElementById('box3')]; // All content boxes
+
     boxes.forEach((box, index) => {
-      const bg = document.getElementById(`bg${index + 1}`);
+      const bg = document.getElementById(`bg${index + 1}`); // Get matching background by ID
+
       setTimeout(() => {
-        if (bg) bg.style.opacity = 0;
-      }, index * 1800);
+        if (bg) bg.style.opacity = 0; // Fade out the background image
+      }, index * 1800); // Stagger the fades (0ms, 1800ms, 3600ms)
+
       setTimeout(() => {
-        box.classList.add('visible');
-      }, index * 1800 + 800);
+        box.classList.add('visible'); // Trigger a CSS animation class (e.g., fade-in or slide-up)
+      }, index * 1800 + 800); // Start box fade slightly after background fades
     });
   </script>
 
   <!-- Display Vote Summaries -->
   <script>
     function updateVoteSummary(key, elementId, label) {
-      const vote = localStorage.getItem(key);
-      const el = document.getElementById(elementId);
+      const vote = localStorage.getItem(key); // Read saved vote from localStorage
+      const el = document.getElementById(elementId); // Find paragraph to update
+
       if (vote === 'advocate') {
-        el.textContent = `✓ You voted in favor of ${label}.`;
+        el.textContent = `✓ You voted in favor of ${label}.`; // Supportive message
       } else if (vote === 'against') {
-        el.textContent = `✕ You voted against ${label}.`;
+        el.textContent = `✕ You voted against ${label}.`; // Opposing message
       } else {
-        el.textContent = `You haven’t voted on ${label} yet.`;
+        el.textContent = `You haven’t voted on ${label} yet.`; // No vote yet
       }
     }
 
+    // Run vote summary updates for all three technologies
     updateVoteSummary('voteChoice_bioprint', 'bioprint-vote-result', 'Bioprinting');
     updateVoteSummary('voteChoice_genome', 'genome-vote-result', 'Genome Editing');
     updateVoteSummary('voteChoice_cyber', 'cyber-vote-result', 'Cybernetics');

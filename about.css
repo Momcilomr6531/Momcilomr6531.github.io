@@ -1,99 +1,98 @@
 /* === GENERAL STYLES === */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    color: #1d1d1f;
-  }
-  
-  /* === NAVBAR === */
-  .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    background-color: #fff;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
-  .navbar li {
-    margin: 0 20px;
-  }
-  
-  .navbar a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  .navbar a:hover {
-    color: #0071e3;
-  }
-  
-  .fade {
-    opacity: 50%;
-  }
-  
-  /* === HERO === */
-  .hero {
-    text-align: center;
-    padding: 100px 20px 50px;
-    color: #0071e3;
-  }
-  
-  .hero h1 {
-    font-size: 3em;
-    margin: 0;
-  }
-  
-  .hero p {
-    font-size: 1.5em;
-    margin-top: 10px;
-  }
-  
-  .black {
-    color: black;
-  }
-  
-  /* === CONTENT LAYOUT === */
-  .content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    padding: 20px;
-  }
-  
-  /* === CONTENT BOX === */
-  .content-box {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
-    text-align: left;
-    z-index: 3;
-  
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-  }
-  
-  /* === ENTRANCE ANIMATION === */
-  .content-box.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
+  font-family: Arial, sans-serif; /* Sets a clean, readable font */
+  margin: 0; /* Removes default body margin */
+  padding: 0; /* Removes default body padding */
+  background-color: #ffffff; /* Sets a white background for the page */
+  color: #1d1d1f; /* Sets default text color to a deep gray */
+}
+
+/* === NAVBAR === */
+.navbar {
+  position: sticky; /* Keeps navbar fixed at the top during scroll */
+  top: 0; /* Anchors it to the top of the viewport */
+  z-index: 1000; /* Ensures navbar overlays all other content */
+  display: flex; /* Flex layout for horizontal alignment */
+  justify-content: center; /* Centers the list of nav links */
+  background-color: #fff; /* White background */
+  padding: 15px 0; /* Vertical padding */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for visual separation */
+}
+
+.navbar ul {
+  display: flex; /* Displays list items in a row */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+  list-style: none; /* Removes bullet points */
+}
+
+.navbar li {
+  margin: 0 20px; /* Adds space between navigation items */
+}
+
+.navbar a {
+  text-decoration: none; /* Removes underline from links */
+  color: #333; /* Dark gray for default link color */
+  font-weight: bold; /* Makes link text bold */
+  transition: color 0.3s; /* Smooth color change on hover */
+}
+
+.navbar a:hover {
+  color: #0071e3; /* Changes link color to blue on hover */
+}
+
+.fade {
+  opacity: 50%; /* Utility class to make elements semi-transparent (e.g. active page) */
+}
+
+/* === HERO === */
+.hero {
+  text-align: center; /* Centers all hero content */
+  padding: 100px 20px 50px; /* Top-heavy spacing for visual emphasis */
+  color: #0071e3; /* Sets text color to the theme blue */
+}
+
+.hero h1 {
+  font-size: 3em; /* Large heading */
+  margin: 0; /* Removes default margin for clean alignment */
+}
+
+.hero p {
+  font-size: 1.5em; /* Enlarged subheading text */
+  margin-top: 10px; /* Adds space below the main heading */
+}
+
+.black {
+  color: black; /* Utility class to override hero blue when needed */
+}
+
+/* === CONTENT LAYOUT === */
+.content-container {
+  display: flex; /* Enables flex layout */
+  flex-direction: column; /* Stacks content vertically */
+  align-items: center; /* Centers children horizontally */
+  gap: 40px; /* Space between content boxes */
+  padding: 20px; /* Padding around content area */
+}
+
+/* === CONTENT BOX === */
+.content-box {
+  background: white; /* White background */
+  padding: 30px; /* Internal spacing */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Light drop shadow */
+  width: 100%; /* Full width on small screens */
+  max-width: 800px; /* Limit width on large screens */
+  text-align: left; /* Left-aligns all text */
+  z-index: 3; /* Keeps content above lower z-index elements */
+
+  opacity: 0; /* Hidden by default for animation */
+  transform: translateY(40px); /* Starts slightly pushed down */
+  transition: all 0.8s ease; /* Smooth transition when made visible */
+}
+
+/* === ENTRANCE ANIMATION === */
+.content-box.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Restores original position */
+}

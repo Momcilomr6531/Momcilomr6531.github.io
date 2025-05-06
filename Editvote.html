@@ -1,85 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Genome Editing Vote</title>
-  <link rel="stylesheet" href="vote.css" />
+  <meta charset="UTF-8" /> <!-- Sets character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Makes layout responsive -->
+  <title>Genome Editing Vote</title> <!-- Page title shown in the browser tab -->
+  <link rel="stylesheet" href="vote.css" /> <!-- Links to external CSS stylesheet -->
 </head>
 
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar">
+  <nav class="navbar"> <!-- Top navigation bar -->
     <ul>
-      <li><a href="javascript:history.back()">Go Back</a></li>
+      <li><a href="javascript:history.back()">Go Back</a></li> <!-- Back button using JavaScript history -->
       <li><a href="Home.html">Home</a></li>
-      <li><a href="learngenome.html">Back to Genome Editing</a></li>
+      <li><a href="learngenome.html">Back to Genome Editing</a></li> <!-- Link to learning page -->
     </ul>
   </nav>
 
   <!-- Voting Section -->
-  <div class="vote-container">
+  <div class="vote-container"> <!-- Main container for voting UI -->
     <h1>Do You Support Genome Editing?</h1>
     <p class="subtitle">Your vote matters. Help us understand public sentiment.</p>
 
     <!-- Vote Buttons -->
-    <div class="button-container">
-      <button class="btn advocate" onclick="submitVote('advocate')">✅ Advocate</button>
-      <button class="btn against" onclick="submitVote('against')">❌ Against</button>
+    <div class="button-container"> <!-- Group of voting buttons -->
+      <button class="btn advocate" onclick="submitVote('advocate')">✅ Advocate</button> <!-- Support option -->
+      <button class="btn against" onclick="submitVote('against')">❌ Against</button> <!-- Oppose option -->
     </div>
 
     <!-- Vote Results -->
-    <div class="vote-results">
+    <div class="vote-results"> <!-- Section to display counts and progress bars -->
       <p>✅ Advocate: <span id="advocate-count">0</span></p>
       <div class="progress-bar">
-        <div class="bar blue" id="advocate-bar" style="width: 0%"></div>
+        <div class="bar blue" id="advocate-bar" style="width: 0%"></div> <!-- Dynamic width based on vote count -->
       </div>
 
       <p>❌ Against: <span id="against-count">0</span></p>
       <div class="progress-bar">
-        <div class="bar red" id="against-bar" style="width: 0%"></div>
+        <div class="bar red" id="against-bar" style="width: 0%"></div> <!-- Dynamic width based on vote count -->
       </div>
     </div>
 
-    <p id="vote-feedback" class="vote-feedback"></p>
+    <p id="vote-feedback" class="vote-feedback"></p> <!-- Message to confirm vote change -->
   </div>
 
   <!-- Voting Logic -->
   <script>
-    let votes = { advocate: 0, against: 0 };
+    let votes = { advocate: 0, against: 0 }; // Keeps count of both vote types
 
-    // Retrieve previous vote (for Genome Editing)
+    // Retrieve previous vote from localStorage (persisted between sessions)
     const previousVote = localStorage.getItem("voteChoice_genome");
     if (previousVote) {
-      votes[previousVote]++;
-      updateDisplay();
+      votes[previousVote]++; // Restore count from previous choice
+      updateDisplay(); // Update visual display immediately
     }
 
     function submitVote(choice) {
-      const previous = localStorage.getItem("voteChoice_genome");
+      const previous = localStorage.getItem("voteChoice_genome"); // Get any prior vote
 
-      // Undo previous vote
+      // If user already voted, remove their previous vote
       if (previous && votes[previous] > 0) {
         votes[previous]--;
       }
 
-      // Save new vote
+      // Record new vote
       votes[choice]++;
-      localStorage.setItem("voteChoice_genome", choice);
+      localStorage.setItem("voteChoice_genome", choice); // Save choice locally
 
-      updateDisplay();
-      document.getElementById("vote-feedback").innerText = "Your vote has been updated.";
+      updateDisplay(); // Refresh UI
+      document.getElementById("vote-feedback").innerText = "Your vote has been updated."; // Confirmation message
     }
 
     function updateDisplay() {
-      const total = votes.advocate + votes.against;
+      const total = votes.advocate + votes.against; // Total number of votes
+
+      // Calculate percentage widths for the bars
       const advocatePercent = total ? (votes.advocate / total) * 100 : 0;
       const againstPercent = total ? (votes.against / total) * 100 : 0;
 
+      // Update text counts
       document.getElementById("advocate-count").innerText = votes.advocate;
       document.getElementById("against-count").innerText = votes.against;
 
+      // Update bar widths visually
       document.getElementById("advocate-bar").style.width = advocatePercent + "%";
       document.getElementById("against-bar").style.width = againstPercent + "%";
     }

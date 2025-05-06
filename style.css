@@ -1,55 +1,60 @@
 /* === GENERAL STYLES === */
+/* Sets default text font and layout for the page */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  color: #1d1d1f;
+  font-family: Arial, sans-serif;  /* Clean sans-serif font */
+  margin: 0;                       /* Remove default browser margin */
+  padding: 0;                      /* Remove default browser padding */
+  background-color: #ffffff;       /* White page background */
+  color: #1d1d1f;                  /* Dark neutral text color */
 }
 
+
 /* === NAVBAR === */
+/* Styles a sticky horizontal navigation bar */
 .navbar {
-  position: sticky;
+  position: sticky;                /* Makes navbar stick to top during scroll */
   top: 0;
-  z-index: 1000;
+  z-index: 1000;                   /* Keeps navbar above other content */
   display: flex;
-  justify-content: center;
+  justify-content: center;         /* Centers nav links */
   background-color: #fff;
   padding: 15px 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
 }
 
 .navbar ul {
-  display: flex;
+  display: flex;                   /* Horizontal nav items */
   padding: 0;
   margin: 0;
-  list-style: none;
+  list-style: none;                /* Removes bullets */
 }
 
 .navbar li {
-  margin: 0 20px;
+  margin: 0 20px;                  /* Space between nav items */
 }
 
 .navbar a {
-  text-decoration: none;
-  color: #333;
+  text-decoration: none;           /* Removes underline from links */
+  color: #333;                     /* Dark gray text */
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color 0.3s;          /* Smooth color transition on hover */
 }
 
 .navbar a:hover {
-  color: #0071e3;
+  color: #0071e3;                  /* Blue highlight on hover */
 }
 
 .fade {
-  opacity: 50%;
+  opacity: 50%;                    /* Used to de-emphasize a nav link */
 }
 
-/* === HERO === */
+
+/* === HERO SECTION === */
+/* The large intro section with title and subtitle */
 .hero {
   text-align: center;
-  padding: 100px 20px 50px;
-  color: #0071e3;
+  padding: 100px 20px 50px;        /* Vertical spacing */
+  color: #0071e3;                  /* Theme blue color for headings */
 }
 
 .hero h1 {
@@ -63,19 +68,23 @@ body {
 }
 
 .black {
-  color: black;
+  color: black;                    /* Overrides blue for specific text */
 }
 
-/* === CONTENT LAYOUT === */
+
+/* === CONTENT SECTION LAYOUT === */
+/* Wraps all three innovation boxes */
 .content-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 60px;
+  flex-wrap: wrap;                 /* Makes boxes wrap on smaller screens */
+  justify-content: center;        /* Center-align the boxes */
+  gap: 60px;                       /* Space between each box */
   padding: 50px 20px;
 }
 
+
 /* === BOX WRAPPER === */
+/* Each container for a tech topic and its background */
 .box-wrapper {
   position: relative;
   width: 300px;
@@ -85,73 +94,80 @@ body {
   align-items: stretch;
 }
 
-/* === BACKGROUND IMAGES === */
+
+/* === BACKGROUND IMAGE BEHIND CONTENT BOX === */
 .bg-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: cover;         /* Cover container proportionally */
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
-  transition: opacity 2.5s ease;
-  border-radius: 20px;
-  z-index: 1;
+  transition: opacity 2.5s ease;  /* Smooth fade effect */
+  border-radius: 20px;            /* Soft corners for image background */
+  z-index: 1;                     /* Layer behind content box */
 }
 
 #bg1 {
   background-image: url('bio.jpg');
   opacity: 0.6;
 }
+
 #bg2 {
   background-image: url('genetic.jpg');
   opacity: 0.6;
 }
+
 #bg3 {
   background-image: url('cyber.jpg');
   opacity: 0.6;
 }
 
-/* === CONTENT BOX === */
+
+/* === CONTENT BOX ON TOP OF BACKGROUND === */
 .content-box {
   background: white;
   padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;             /* Rounded corners for the white box */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  /* Subtle drop shadow */
   width: 100%;
   text-align: center;
   position: relative;
-  z-index: 3;
+  z-index: 3;                      /* Ensures it appears above bg image */
 
-  min-height: 460px;
+  min-height: 460px;              /* Equal box height for layout balance */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 0;                      /* Initially hidden for animation */
+  transform: translateY(40px);     /* Shifted down before appearing */
   transition: all 1s ease;
 }
 
+/* Class added by JS to fade box in */
 .content-box.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0);        /* Animates upward into place */
 }
 
-/* === IMAGES === */
+
+/* === IMAGES INSIDE CONTENT BOXES === */
 .content-box img {
   width: auto;
   height: 180px;
   max-width: 100%;
-  border-radius: 15px;
+  border-radius: 15px;             /* Rounded edges for the image */
   display: block;
   margin: 0 auto 15px;
-  object-fit: cover;
+  object-fit: cover;               /* Ensures proper cropping without stretching */
 }
 
-/* === TEXT STYLING === */
+
+/* === TEXT STYLING IN BOX === */
 .content-box h2 {
   font-size: 1.5em;
   margin: 15px 0 10px;
@@ -165,19 +181,23 @@ body {
 .content-box a {
   text-decoration: none;
   font-weight: bold;
-  color: #0071e3;
+  color: #0071e3;                  /* Styled “Learn More →” links */
 }
 
-/* === HOVER EFFECTS === */
+
+/* === BOX HOVER EFFECTS === */
+/* Unique hover glow colors per topic */
 #box1:hover {
-  box-shadow: 0 0 20px #00bfffaa;
+  box-shadow: 0 0 20px #00bfffaa;  /* Aqua glow */
   transform: translateY(-5px);
 }
+
 #box2:hover {
-  box-shadow: 0 0 20px #ffcc00aa;
+  box-shadow: 0 0 20px #ffcc00aa;  /* Yellow glow */
   transform: translateY(-5px);
 }
+
 #box3:hover {
-  box-shadow: 0 0 25px #ff0033cc;
+  box-shadow: 0 0 25px #ff0033cc;  /* Red glow */
   transform: translateY(-5px);
 }

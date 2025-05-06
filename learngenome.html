@@ -1,69 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Genome Editing: Redefining Humanity?</title>
-  <link rel="stylesheet" href="learnmore.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CRISPR, genetic enhancement, and the future of the human genome: explore the promises and ethical dilemmas of genome editing.">
+  <meta charset="UTF-8"> <!-- Sets character encoding for the document -->
+  <title>Genome Editing: Redefining Humanity?</title> <!-- Page title shown in browser tab -->
+  <link rel="stylesheet" href="learnmore.css"> <!-- Links to external CSS file -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on all devices -->
+  <meta name="description" content="CRISPR, genetic enhancement, and the future of the human genome: explore the promises and ethical dilemmas of genome editing."> <!-- SEO description for search engines -->
 </head>
 
 <body>
 
   <!-- Navigation Bar -->
-  <nav class="navbar">
+  <nav class="navbar"> <!-- Fixed/sticky top navigation -->
     <ul>
-      <li><a href="javascript:history.back()" class="navlink">Go Back</a></li>
+      <li><a href="javascript:history.back()" class="navlink">Go Back</a></li> <!-- Uses JavaScript to return to previous page -->
       <li><a href="Home.html">Home</a></li>
       <li><a href="learnbioprint.html">Bioprinting</a></li>
-      <li class="fade"><a href="learngenome.html">Genome Editing</a></li>
+      <li class="fade"><a href="learngenome.html">Genome Editing</a></li> <!-- Current page, visually faded -->
       <li><a href="learncybernetic.html">Cybernetics</a></li>
     </ul>
   </nav>
 
   <!-- Main Content Container -->
-  <div class="content-container fade-in fade-in-1">
-    <h1 class="fade-in fade-in-2">Genome Editing: Redefining Humanity?</h1>
-    <img src="Genes.jpeg" class="feature-image fade-in fade-in-3" alt="Genome Editing Visualization">
-    
+  <div class="content-container fade-in fade-in-1"> <!-- Centered content block with fade-in effect -->
+    <h1 class="fade-in fade-in-2">Genome Editing: Redefining Humanity?</h1> <!-- Page heading with delayed fade -->
+    <img src="Genes.jpeg" class="feature-image fade-in fade-in-3" alt="Genome Editing Visualization"> <!-- Main image -->
+
     <p class="fade-in fade-in-4">Genome editing allows us to rewrite the very code of life. CRISPR and other genetic tools enable us to correct mutations, eliminate hereditary diseases, and even enhance human traits. But should we?</p>
 
     <h2 class="fade-in fade-in-5">The Ethics of Genetic Perfection</h2>
     <p class="fade-in fade-in-5">If we can engineer intelligence, strength, and longevity, will natural human diversity disappear? Will we create a new social divide—those who are genetically enhanced and those who are not?</p>
 
-    <blockquote class="fade-in fade-in-6">"By mastering our own DNA, do we take control of evolution, or do we risk losing what makes us human?"</blockquote>
+    <blockquote class="fade-in fade-in-6">"By mastering our own DNA, do we take control of evolution, or do we risk losing what makes us human?"</blockquote> <!-- Stylized quote -->
 
     <h2 class="fade-in fade-in-6">The Future: A Designed Species?</h2>
     <p class="fade-in fade-in-7">As genome editing advances, are we on the brink of creating a tailored human race? If we eliminate flaws, do we erase individuality? The boundaries between medicine and modification are fading.</p>
 
     <!-- Buttons -->
-    <div class="button-container fade-in fade-in-7">
-      <a href="Editvote.html" class="btn">Share Your Thoughts</a>
-      <a href="Home.html" class="btn secondary">Back to Home</a>
+    <div class="button-container fade-in fade-in-7"> <!-- Button group with fade -->
+      <a href="Editvote.html" class="btn">Share Your Thoughts</a> <!-- Primary button -->
+      <a href="Home.html" class="btn secondary">Back to Home</a> <!-- Secondary (gray) button -->
     </div>
   </div>
 
   <!-- Live Article Section -->
-  <div class="random-article-card fade-in fade-in-7">
+  <div class="random-article-card fade-in fade-in-7"> <!-- Card with random article -->
     <h3>Learn More About Genome Editing</h3>
     <p>Here’s a recent article you might find interesting:</p>
-    <div id="random-article" class="random-article-link">Loading...</div>
+    <div id="random-article" class="random-article-link">Loading...</div> <!-- Placeholder for dynamic content -->
   </div>
 
   <!-- NewsAPI Integration -->
   <script>
-    const apiKey = '8cf376d1c95940fa9752a045dc198c9b';
-    const fallbackArticle = {
+    const apiKey = '8cf376d1c95940fa9752a045dc198c9b'; // Your API key from NewsAPI
+
+    const fallbackArticle = { // Fallback article if the API fails or returns no results
       title: "The CRISPR Revolution and the Future of Human Evolution",
       url: "https://www.nature.com/articles/d41586-020-03417-8"
     };
 
     async function fetchGenomeEditingArticles() {
-      const today = new Date();
-      const twentyFourMonthsAgo = new Date(today.setFullYear(today.getFullYear() - 2));
-      const fromDate = twentyFourMonthsAgo.toISOString().split('T')[0];
+      const today = new Date(); // Current date
+      const twentyFourMonthsAgo = new Date(today.setFullYear(today.getFullYear() - 2)); // 2 years ago
+      const fromDate = twentyFourMonthsAgo.toISOString().split('T')[0]; // Format as YYYY-MM-DD
 
-      const query = [
+      const query = [ // Search terms joined with OR for broad matching
         '"genome editing"',
         '"CRISPR"',
         '"gene editing"',
@@ -81,35 +82,35 @@
       ].join(' OR ');
 
       const url = `https://newsapi.org/v2/everything?` +
-        `q=${encodeURIComponent(query)}&` +
+        `q=${encodeURIComponent(query)}&` + // Encode query for URL
         `language=en&` +
         `from=${fromDate}&` +
-        `sortBy=publishedAt&` +
-        `pageSize=10&` +
-        `apiKey=${apiKey}`;
+        `sortBy=publishedAt&` + // Sort by latest
+        `pageSize=10&` + // Limit to 10 results
+        `apiKey=${apiKey}`; // Attach API key
 
       try {
-        const response = await fetch(url);
-        const data = await response.json();
+        const response = await fetch(url); // Fetch data from NewsAPI
+        const data = await response.json(); // Convert to JSON
         console.log("Total articles found:", data.totalResults);
 
-        const articleContainer = document.getElementById('random-article');
+        const articleContainer = document.getElementById('random-article'); // Target container
 
         if (data.articles && data.articles.length > 0) {
-          const randomIndex = Math.floor(Math.random() * data.articles.length);
+          const randomIndex = Math.floor(Math.random() * data.articles.length); // Pick random article
           const article = data.articles[randomIndex];
-          articleContainer.innerHTML = `<a href="${article.url}" target="_blank">${article.title}</a>`;
+          articleContainer.innerHTML = `<a href="${article.url}" target="_blank">${article.title}</a>`; // Insert link
         } else {
-          articleContainer.innerHTML = `<a href="${fallbackArticle.url}" target="_blank">${fallbackArticle.title}</a>`;
+          articleContainer.innerHTML = `<a href="${fallbackArticle.url}" target="_blank">${fallbackArticle.title}</a>`; // Fallback
         }
       } catch (error) {
-        console.error("Fetch error:", error);
+        console.error("Fetch error:", error); // Log any errors
         document.getElementById('random-article').innerHTML =
-          `<a href="${fallbackArticle.url}" target="_blank">${fallbackArticle.title}</a>`;
+          `<a href="${fallbackArticle.url}" target="_blank">${fallbackArticle.title}</a>`; // Fallback on error
       }
     }
 
-    window.onload = fetchGenomeEditingArticles;
+    window.onload = fetchGenomeEditingArticles; // Runs fetch function when the page finishes loading
   </script>
 
 </body>

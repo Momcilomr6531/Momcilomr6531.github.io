@@ -1,118 +1,132 @@
 /* === GENERAL STYLES === */
+/* Sets a clean, modern base appearance for all pages */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  color: #1d1d1f;
+  font-family: Arial, sans-serif; /* Sans-serif font for readability */
+  margin: 0;                      /* Remove default margin */
+  padding: 0;                     /* Remove default padding */
+  background-color: #ffffff;      /* White background */
+  color: #1d1d1f;                 /* Neutral dark text for readability */
 }
 
+
 /* === NAVBAR === */
+/* Sticky navigation bar at the top of the page */
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  background-color: #fff;
-  padding: 15px 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;              /* Keeps navbar fixed at top on scroll */
+  top: 0;                        /* Aligns navbar to top of viewport */
+  z-index: 1000;                 /* Ensures navbar appears above other elements */
+  display: flex;                 /* Horizontal layout */
+  justify-content: center;      /* Center the nav links */
+  background-color: #fff;       /* White background */
+  padding: 15px 0;              /* Vertical padding for spacing */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds depth with soft shadow */
 }
 
 .navbar ul {
-  display: flex;
+  display: flex;                 /* Horizontal list */
   padding: 0;
   margin: 0;
-  list-style: none;
+  list-style: none;             /* Remove bullets */
 }
 
 .navbar li {
-  margin: 0 20px;
+  margin: 0 20px;               /* Space between each nav link */
 }
 
 .navbar a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  text-decoration: none;       /* Remove underline */
+  color: #333;                 /* Dark gray for clean look */
+  font-weight: bold;           /* Bold for readability */
+  transition: color 0.3s ease; /* Smooth hover transition */
 }
 
 .navbar a:hover {
-  color: #0071e3;
+  color: #0071e3;              /* Bright blue hover color */
 }
 
+
 /* === VOTE SECTION === */
+/* Main container for vote page */
 .vote-container {
   text-align: center;
-  padding: 60px 20px 40px;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 60px 20px 40px;      /* Top, horizontal, bottom padding */
+  max-width: 800px;             /* Prevent overly wide layout */
+  margin: 0 auto;               /* Center horizontally */
 }
 
 .vote-container h1 {
-  font-size: 2.5em;
-  color: #0071e3;
+  font-size: 2.5em;             /* Large heading size */
+  color: #0071e3;               /* Theme blue */
   margin-bottom: 10px;
 }
 
 .subtitle {
   font-size: 1.2em;
-  color: #555;
+  color: #555;                  /* Muted gray for subtitles */
 }
 
-/* === CHART === */
+
+/* === CHART SECTION (Optional) === */
+/* Used if you embed charts (like pie graphs or bars) */
 .chart-container {
-  margin: 30px 0;
+  margin: 30px 0;               /* Vertical spacing */
 }
 
 .chart-container img {
-  max-width: 300px;
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  max-width: 300px;             /* Limit image size */
+  width: 100%;                  /* Responsive scale */
+  border-radius: 12px;          /* Rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Soft lift effect */
 }
 
 .chart-caption {
-  font-style: italic;
+  font-style: italic;           /* Italic for figure notes */
   color: #333;
   margin-top: 10px;
 }
 
+
 /* === BUTTONS === */
+/* Layout for vote buttons */
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  gap: 30px;                    /* Space between buttons */
+  flex-wrap: wrap;              /* Allows wrap on small screens */
   margin: 30px 0;
 }
 
+/* Shared styles for all buttons */
 .btn {
-  padding: 15px 35px;
+  padding: 15px 35px;           /* Internal spacing */
   font-size: 1.1em;
   font-weight: bold;
   border: none;
-  border-radius: 12px;
+  border-radius: 12px;          /* Soft, rounded buttons */
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth effects */
 }
 
 .btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);  /* Slight upward motion on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Elevated look */
 }
 
+/* Advocate button = blue */
 .btn.advocate {
   background-color: #0071e3;
   color: white;
 }
 
+/* Against button = red */
 .btn.against {
   background-color: #d32f2f;
   color: white;
 }
 
+
 /* === RESULTS === */
+/* Styling for number displays and progress bars */
 .vote-results {
   font-size: 1.1em;
   font-weight: 500;
@@ -123,17 +137,19 @@ body {
 .progress-bar {
   width: 80%;
   height: 22px;
-  background-color: #e0e0e0;
+  background-color: #e0e0e0;     /* Light gray background for empty bar */
   border-radius: 12px;
   overflow: hidden;
   margin: 10px auto 25px;
 }
 
+/* Animated progress fill */
 .bar {
   height: 100%;
   transition: width 0.5s ease;
 }
 
+/* Color-coded progress fill */
 .bar.blue {
   background-color: #0071e3;
 }
@@ -142,7 +158,9 @@ body {
   background-color: #d32f2f;
 }
 
-/* === FEEDBACK === */
+
+/* === FEEDBACK TEXT === */
+/* Confirmation after a vote is cast */
 .vote-feedback {
   font-size: 1em;
   margin-top: 10px;
@@ -150,7 +168,9 @@ body {
   font-weight: bold;
 }
 
-/* === RESPONSIVE === */
+
+/* === MOBILE RESPONSIVENESS === */
+/* Adjusts layout and font sizes on smaller devices */
 @media (max-width: 600px) {
   .btn {
     font-size: 1em;

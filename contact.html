@@ -2,59 +2,67 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Us - Bioethics: The Cost of Innovation</title>
-  <link rel="stylesheet" href="contact.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"> <!-- Sets character encoding -->
+  <title>Contact Us - Bioethics: The Cost of Innovation</title> <!-- Browser tab title -->
+  <link rel="stylesheet" href="contact.css"> <!-- Link to external CSS for styling this page -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on all devices -->
 </head>
 
 <body>
 
   <!-- Navigation Bar -->
-  <nav class="navbar">
+  <nav class="navbar"> <!-- Top navigation menu -->
     <ul>
-  
       <li><a href="Home.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li class="fade"><a href="contact.html">Contact</a></li>
+      <li class="fade"><a href="contact.html">Contact</a></li> <!-- Current page (visually faded or styled differently) -->
     </ul>
   </nav>
 
   <!-- Hero Section -->
-  <div class="hero">
+  <div class="hero"> <!-- Banner section with heading and subtitle -->
     <h1>Get in Touch</h1>
     <p class="black">Have questions, thoughts, or insights? We'd love to hear from you.</p>
   </div>
 
   <!-- Content Section -->
-  <div class="content-container">
+  <div class="content-container"> <!-- Main content wrapper -->
 
     <!-- Contact Info -->
-    <div class="content-box" style="width: 500px;">
+    <div class="content-box" style="width: 500px;"> <!-- Box with static contact details -->
       <h2>Contact Information</h2>
-      <p>Email: <a href="mailto:info@bioethics.com">info@bioethics.com</a></p>
-      <p>Phone: +1 (323) 220-4444</p>
-      <p>Address: Ethical Avenue, New York</p>
+      <p>Email: <a href="mailto:info@bioethics.com">info@bioethics.com</a></p> <!-- Clickable email link -->
+      <p>Phone: +1 (323) 220-4444</p> <!-- Dummy phone number -->
+      <p>Address: Ethical Avenue, New York</p> <!-- Placeholder address -->
     </div>
 
     <!-- Contact Form -->
-    <div class="content-box" style="width: 500px;">
+    <div class="content-box" style="width: 500px;"> <!-- Box containing the form -->
       <h2>Send Us a Message</h2>
 
-      <form action="https://formspree.io/f/myzwwdqb" method="POST">
+      <!-- Form submission handled by Formspree service -->
+      <form action="https://formspree.io/f/myzwwdqb" method="POST"> <!-- Sends form data to Formspree endpoint -->
+
+        <!-- Hidden subject for the email notification -->
         <input type="hidden" name="_subject" value="New Message from Bioethics Contact Page">
+
+        <!-- Redirects to thank you page after successful submission -->
         <input type="hidden" name="_next" value="thanks.html">
 
+        <!-- Name input -->
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" required> <!-- 'required' ensures the field must be filled -->
 
+        <!-- Email input -->
         <label for="email">Email:</label>
-        <input type="email" id="email" name="_replyto" required>
+        <input type="email" id="email" name="_replyto" required> <!-- '_replyto' used by Formspree to reply to sender -->
 
+        <!-- Message text area -->
         <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <textarea id="message" name="message" rows="4" required></textarea> <!-- Allows multiline message -->
 
-        <button type="submit" class="btn">Send Message</button>
+        <!-- Submit button -->
+        <button type="submit" class="btn">Send Message</button> <!-- Styled button for form submission -->
       </form>
     </div>
 

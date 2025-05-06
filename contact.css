@@ -1,135 +1,134 @@
 /* === GENERAL STYLES === */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    color: #1d1d1f;
-  }
-  
-  /* === NAVBAR === */
-  .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    background-color: #fff;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
-  .navbar li {
-    margin: 0 20px;
-  }
-  
-  .navbar a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  .navbar a:hover {
-    color: #0071e3;
-  }
-  
-  .fade {
-    opacity: 50%;
-  }
-  
-  /* === HERO === */
-  .hero {
-    text-align: center;
-    padding: 100px 20px 50px;
-    color: #0071e3;
-  }
-  
-  .hero h1 {
-    font-size: 3em;
-    margin: 0;
-  }
-  
-  .hero p {
-    font-size: 1.5em;
-    margin-top: 10px;
-  }
-  
-  .black {
-    color: black;
-  }
-  
-  /* === CONTENT LAYOUT === */
-  .content-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
-  }
-  
-  /* === CONTENT BOX === */
-  .content-box {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-    text-align: left;
-    z-index: 3;
-  }
-  
-  /* === FORM ELEMENTS === */
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 5px;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 1em;
-    box-sizing: border-box;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  /* === SUBMIT BUTTON === */
-  .btn {
-    background-color: #0071e3;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    align-self: flex-start;
-  }
-  
-  .btn:hover {
-    background-color: #005bb5;
-  }
-  
+  font-family: Arial, sans-serif; /* Sets base font for the entire site */
+  margin: 0; /* Removes default page margin */
+  padding: 0; /* Removes default page padding */
+  background-color: #ffffff; /* Sets page background to white */
+  color: #1d1d1f; /* Sets default text color to near-black */
+}
+
+/* === NAVBAR === */
+.navbar {
+  position: sticky; /* Keeps the navbar fixed at the top when scrolling */
+  top: 0; /* Anchors sticky navbar to the top of the viewport */
+  z-index: 1000; /* Ensures navbar stays above other content */
+  display: flex; /* Enables horizontal layout of child elements */
+  justify-content: center; /* Centers the list of links horizontally */
+  background-color: #fff; /* White background for contrast */
+  padding: 15px 0; /* Adds vertical spacing */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.navbar ul {
+  display: flex; /* Horizontal layout for nav items */
+  padding: 0; /* Removes default list padding */
+  margin: 0; /* Removes default list margin */
+  list-style: none; /* Removes bullets */
+}
+
+.navbar li {
+  margin: 0 20px; /* Adds space between nav links */
+}
+
+.navbar a {
+  text-decoration: none; /* Removes underline from links */
+  color: #333; /* Dark gray text for links */
+  font-weight: bold; /* Makes links bold */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.navbar a:hover {
+  color: #0071e3; /* Changes link color to blue on hover */
+}
+
+.fade {
+  opacity: 50%; /* Used to visually mute a nav item (e.g. current page) */
+}
+
+/* === HERO === */
+.hero {
+  text-align: center; /* Centers all text in this section */
+  padding: 100px 20px 50px; /* Top-heavy padding for spacing */
+  color: #0071e3; /* Applies bright blue to text unless overridden */
+}
+
+.hero h1 {
+  font-size: 3em; /* Enlarges main heading */
+  margin: 0; /* Removes default margin */
+}
+
+.hero p {
+  font-size: 1.5em; /* Large subtext below heading */
+  margin-top: 10px; /* Adds space between h1 and p */
+}
+
+.black {
+  color: black; /* Utility class to override blue in hero section */
+}
+
+/* === CONTENT LAYOUT === */
+.content-container {
+  display: flex; /* Enables side-by-side layout */
+  flex-wrap: wrap; /* Allows wrapping to next line on smaller screens */
+  justify-content: center; /* Centers content boxes */
+  gap: 40px; /* Space between boxes */
+  padding: 20px; /* Padding around content container */
+}
+
+/* === CONTENT BOX === */
+.content-box {
+  background: white; /* White background for each box */
+  padding: 30px; /* Internal spacing */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle drop shadow */
+  width: 100%; /* Full width for smaller screens */
+  max-width: 500px; /* Restricts box width on larger screens */
+  text-align: left; /* Left-aligns all text in the box */
+  z-index: 3; /* Makes sure content sits above faded elements if needed */
+}
+
+/* === FORM ELEMENTS === */
+form {
+  display: flex;
+  flex-direction: column; /* Stacks form elements vertically */
+}
+
+label {
+  font-weight: bold; /* Highlights labels */
+  margin-top: 10px; /* Adds space above labels */
+  margin-bottom: 5px; /* Adds space between label and input */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%; /* Makes form elements span the full width of the container */
+  padding: 10px; /* Internal spacing */
+  margin-bottom: 16px; /* Space below each field */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  font-family: inherit; /* Inherits font from parent (body) */
+  font-size: 1em; /* Sets standard font size */
+  box-sizing: border-box; /* Includes padding in element’s total width */
+}
+
+textarea {
+  resize: vertical; /* Allows user to expand textarea height */
+}
+
+/* === SUBMIT BUTTON === */
+.btn {
+  background-color: #0071e3; /* Bright blue background */
+  color: white; /* White text */
+  padding: 12px 20px; /* Internal button padding */
+  border: none; /* Removes default border */
+  border-radius: 8px; /* Rounded button corners */
+  font-weight: bold; /* Bold button text */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth hover animation */
+  align-self: flex-start; /* Aligns button to the left within the form */
+}
+
+.btn:hover {
+  background-color: #005bb5; /* Darker blue on hover for feedback */
+}
