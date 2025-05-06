@@ -12,7 +12,7 @@
   <!-- Navigation Bar -->
   <nav class="navbar">
     <ul>
-      <li><a href="javascript:history.back()" class="navlink">Go Back</a></li>
+      
       <li class="fade"><a href="Home.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -36,6 +36,7 @@
         <h2>Bioprinting</h2>
         <p>Synthesizing body parts from scratch. Is this a cure or a step beyond humanity?</p>
         <a href="learnbioprint.html">Learn More →</a>
+        <p id="bioprint-vote-result" class="vote-summary" style="margin-top: 10px; font-size: 0.9em; color: #555;"></p>
       </div>
     </div>
 
@@ -47,6 +48,7 @@
         <h2>Genome Editing</h2>
         <p>Modifying our very DNA. Do we remain human?</p>
         <a href="learngenome.html">Learn More →</a>
+        <p id="genome-vote-result" class="vote-summary" style="margin-top: 10px; font-size: 0.9em; color: #555;"></p>
       </div>
     </div>
 
@@ -54,10 +56,11 @@
     <div class="box-wrapper">
       <div class="bg-image" id="bg3"></div>
       <div class="content-box" id="box3">
-        <img src="cybernetics.jpeg" alt="Cybernetic Enhancements">
+        <img src="cyberdude.jpg" alt="Cybernetic Enhancements" class = "rounded-img">
         <h2>Cybernetics</h2>
         <p>Enhancing ourselves with technology. Are we still living, or just machines?</p>
         <a href="learncybernetic.html">Learn More →</a>
+        <p id="cyber-vote-result" class="vote-summary" style="margin-top: 10px; font-size: 0.9em; color: #555;"></p>
       </div>
     </div>
 
@@ -69,17 +72,32 @@
 
     boxes.forEach((box, index) => {
       const bg = document.getElementById(`bg${index + 1}`);
-
-      // Fade out background
       setTimeout(() => {
         if (bg) bg.style.opacity = 0;
-      }, index * 1800); // delay between each image
-
-      // Then show content box
+      }, index * 1800);
       setTimeout(() => {
         box.classList.add('visible');
       }, index * 1800 + 800);
     });
+  </script>
+
+  <!-- Display Vote Summaries -->
+  <script>
+    function updateVoteSummary(key, elementId, label) {
+      const vote = localStorage.getItem(key);
+      const el = document.getElementById(elementId);
+      if (vote === 'advocate') {
+        el.textContent = `✓ You voted in favor of ${label}.`;
+      } else if (vote === 'against') {
+        el.textContent = `✕ You voted against ${label}.`;
+      } else {
+        el.textContent = `You haven’t voted on ${label} yet.`;
+      }
+    }
+
+    updateVoteSummary('voteChoice_bioprint', 'bioprint-vote-result', 'Bioprinting');
+    updateVoteSummary('voteChoice_genome', 'genome-vote-result', 'Genome Editing');
+    updateVoteSummary('voteChoice_cyber', 'cyber-vote-result', 'Cybernetics');
   </script>
 
 </body>

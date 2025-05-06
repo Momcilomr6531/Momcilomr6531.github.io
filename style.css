@@ -48,7 +48,7 @@ body {
 /* === HERO === */
 .hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: 100px 20px 50px;
   color: #0071e3;
 }
 
@@ -75,13 +75,14 @@ body {
   padding: 50px 20px;
 }
 
+/* === BOX WRAPPER === */
 .box-wrapper {
   position: relative;
   width: 300px;
   padding: 10px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
 }
 
 /* === BACKGROUND IMAGES === */
@@ -95,23 +96,21 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
-  transition: opacity 1s ease;
+  transition: opacity 2.5s ease;
   z-index: 1;
 }
 
 #bg1 {
   background-image: url('bio.jpg');
-  opacity: .6;
+  opacity: 0.6;
 }
-
 #bg2 {
   background-image: url('genetic.jpg');
   opacity: 0.6;
 }
-
 #bg3 {
   background-image: url('cyber.jpg');
-  opacity: 0.6; /* starts semi-transparent */
+  opacity: 0.6;
 }
 
 /* === CONTENT BOX === */
@@ -125,6 +124,11 @@ body {
   position: relative;
   z-index: 3;
 
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
   opacity: 0;
   transform: translateY(40px);
   transition: all 1s ease;
@@ -137,17 +141,19 @@ body {
 
 .content-box img {
   width: 100%;
-  border-radius: 10px;
+  max-height: 180px;
+  object-fit: contain;
+  margin-bottom: 15px;
 }
 
 .content-box h2 {
   font-size: 1.5em;
-  margin: 15px 0;
+  margin: 15px 0 10px;
 }
 
 .content-box p {
   font-size: 1em;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .content-box a {
@@ -159,40 +165,18 @@ body {
 /* === HOVER EFFECTS === */
 #box1:hover {
   box-shadow: 0 0 20px #00bfffaa;
+  transform: translateY(-5px);
 }
 #box2:hover {
   box-shadow: 0 0 20px #ffcc00aa;
+  transform: translateY(-5px);
 }
 #box3:hover {
   box-shadow: 0 0 25px #ff0033cc;
+  transform: translateY(-5px);
 }
 
-/* Contact form inputs */
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0 16px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: 1em;
+.rounded-img {
+  border-radius: 15px;
+  overflow: hidden;
 }
-
-/* Submit button */
-.btn {
-  background-color: #0071e3;
-  color: white;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.btn:hover {
-  background-color: #005bb5;
-}
-

@@ -23,7 +23,6 @@
     <h1>Do You Support Cybernetics?</h1>
     <p class="subtitle">Your vote matters. Help us understand public sentiment.</p>
 
-
     <!-- Vote Buttons -->
     <div class="button-container">
       <button class="btn advocate" onclick="submitVote('advocate')">✅ Advocate</button>
@@ -49,42 +48,41 @@
   <!-- Voting Logic -->
   <script>
     let votes = { advocate: 0, against: 0 };
-  
-    // Retrieve previous vote
-    const previousVote = localStorage.getItem("voteChoice");
+
+    // Retrieve previous vote (specifically for Cybernetics)
+    const previousVote = localStorage.getItem("voteChoice_cyber");
     if (previousVote) {
       votes[previousVote]++;
       updateDisplay();
     }
-  
+
     function submitVote(choice) {
-      const previous = localStorage.getItem("voteChoice");
-  
-      // Undo previous vote
-      if (previous) {
-        votes[previous] = Math.max(0, votes[previous] - 1);
+      const previous = localStorage.getItem("voteChoice_cyber");
+
+      // Remove old vote
+      if (previous && votes[previous] > 0) {
+        votes[previous]--;
       }
-  
-      // Store new vote
+
+      // Add new vote and store
       votes[choice]++;
-      localStorage.setItem("voteChoice", choice);
-  
+      localStorage.setItem("voteChoice_cyber", choice);
+
       updateDisplay();
       document.getElementById("vote-feedback").innerText = "Your vote has been updated.";
     }
-  
+
     function updateDisplay() {
       const total = votes.advocate + votes.against;
       const advocatePercent = total ? (votes.advocate / total) * 100 : 0;
       const againstPercent = total ? (votes.against / total) * 100 : 0;
-  
+
       document.getElementById("advocate-count").innerText = votes.advocate;
       document.getElementById("against-count").innerText = votes.against;
-  
+
       document.getElementById("advocate-bar").style.width = advocatePercent + "%";
       document.getElementById("against-bar").style.width = againstPercent + "%";
     }
   </script>
-  
 </body>
 </html>
