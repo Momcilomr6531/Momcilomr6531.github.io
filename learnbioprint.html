@@ -1,88 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bioprinting: A Step Beyond Nature?</title>
-    <link rel="stylesheet" href="learnmore.css"> <!-- Linking the external CSS file for page styling -->
-    <script>
-        // Array of random article links for the "Learn More" section
-        const articles = [
-            { title: "The Basics of Bioprinting", url: "https://example.com/article1" },
-            { title: "Advancements in Bioprinting Technologies", url: "https://example.com/article2" },
-            { title: "Ethical Considerations in Bioprinting", url: "https://example.com/article3" },
-            { title: "The Future of Bioprinting in Medicine", url: "https://example.com/article4" }
-        ];
-
-        // Function to get a random article
-        function getRandomArticle() {
-            const randomIndex = Math.floor(Math.random() * articles.length); // Random index
-            const article = articles[randomIndex]; // Get the random article
-            return `<a href="${article.url}" class="random-article-link">${article.title}</a>`; // Return HTML for the link
-        }
-
-        // Function to display a random article in the "Learn More" section
-        function displayRandomArticle() {
-            const randomArticleElement = document.getElementById('random-article');
-            randomArticleElement.innerHTML = getRandomArticle();
-        }
-
-        // Load a random article when the page loads
-        window.onload = displayRandomArticle;
-    </script>
+  <meta charset="UTF-8">
+  <title>Bioprinting: A Step Beyond Nature?</title>
+  <link rel="stylesheet" href="learnmore.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the science, ethics, and future of bioprinting. Can we print life? Are we redefining what it means to be human?">
 </head>
+
 <body>
 
-    <!-- Navigation Bar with links to other sections of the site -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="javascript:history.back()" class="navlink">Go Back</a> </li>
-            <li><a href="Home.html">Home</a></li> <!-- Link to the Home page -->
-            <li class="fade"><a href="learnbioprint.html">Bioprinting</a></li> <!-- Current page (Bioprinting) is highlighted with "fade" class -->
-            <li><a href="learngenome.html">Genome Editing</a></li> <!-- Link to Genome Editing page -->
-            <li><a href="learncybernetic.html">Cybernetics</a></li> <!-- Link to Cybernetics page -->
-        </ul>
-    </nav>
-    
-    <!-- Main Content Section -->
-    <div class="content-container">
-        <h1>Bioprinting: A Step Beyond Nature?</h1> <!-- Main heading of the page -->
-        
-        <!-- Feature Image representing the Bioprinting process -->
-        <img src="Bioprint.jpeg" class="feature-image" alt="Bioprinting Process"> <!-- Image related to bioprinting -->
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="javascript:history.back()" class="navlink">Go Back</a></li>
+      <li><a href="Home.html">Home</a></li>
+      <li class="fade"><a href="learnbioprint.html">Bioprinting</a></li>
+      <li><a href="learngenome.html">Genome Editing</a></li>
+      <li><a href="learncybernetic.html">Cybernetics</a></li>
+    </ul>
+  </nav>
 
-        <!-- Introduction paragraph about bioprinting -->
-        <p>
-            Bioprinting is the revolutionary process of creating organic structures—skin, bones, even organs—layer by layer, much like a 3D printer. It holds the promise of eliminating transplant waiting lists, healing injuries, and even enhancing human capabilities. But at what cost?
-        </p>
+  <!-- Main Content -->
+  <div class="content-container fade-in fade-in-1">
+    <h1 class="fade-in fade-in-2">Bioprinting: A Step Beyond Nature?</h1>
+    <img src="Bioprint.jpeg" class="feature-image fade-in fade-in-3" alt="3D bioprinter creating tissue layer by layer">
 
-        <!-- Heading discussing the intersection of science and ethics -->
-        <h2>Where Science Meets Ethics</h2>
-        <p>
-            If we can synthesize body parts, do we redefine what it means to be human? Are we simply biological machines, replaceable and upgradable? Bioprinting challenges not only medicine but the very essence of identity, mortality, and natural evolution.
-        </p>
+    <p class="fade-in fade-in-4">
+      Bioprinting is the revolutionary process of creating organic structures—skin, bones, even organs—layer by layer,
+      much like a 3D printer. It holds the promise of eliminating transplant waiting lists, healing injuries, and even
+      enhancing human capabilities. But at what cost?
+    </p>
 
-        <!-- Blockquote with a thought-provoking question related to bioprinting -->
-        <blockquote>
-            "When we replace nature’s blueprint with our own, do we improve life, or do we create something unrecognizable?"
-        </blockquote>
+    <h2 class="fade-in fade-in-5">Where Science Meets Ethics</h2>
+    <p class="fade-in fade-in-5">
+      If we can synthesize body parts, do we redefine what it means to be human? Are we simply biological machines,
+      replaceable and upgradable? Bioprinting challenges not only medicine but the very essence of identity, mortality,
+      and natural evolution.
+    </p>
 
-        <!-- Heading discussing the potential future of bioprinting -->
-        <h2>The Future: A New Form of Life?</h2>
-        <p>
-            With advancements in this field, could we one day print entire human beings? If so, would they be human in the traditional sense, or something entirely new? The lines blur between healing and creating, between restoring and redefining.
-        </p>
+    <blockquote class="fade-in fade-in-6">
+      "When we replace nature’s blueprint with our own, do we improve life, or do we create something unrecognizable?"
+    </blockquote>
 
-        <!-- Random article link section -->
-        <h3>Learn More:</h3>
-        <p id="random-article"></p> <!-- This will display the random article link -->
+    <h2 class="fade-in fade-in-6">The Future: A New Form of Life?</h2>
+    <p class="fade-in fade-in-7">
+      With advancements in this field, could we one day print entire human beings? If so, would they be human in the
+      traditional sense, or something entirely new? The lines blur between healing and creating, between restoring and
+      redefining.
+    </p>
 
-        <!-- Button container with links for further engagement -->
-        <div class="button-container">
-            <a href="Bioprintvote.html" class="btn">Share Your Thoughts</a> <!-- Link to a page where users can share their opinions -->
-            <a href="Home.html" class="btn secondary">Back to Home</a> <!-- Link to return to the Home page -->
-        </div>
+    <!-- Buttons -->
+    <div class="button-container fade-in fade-in-7">
+      <a href="Bioprintvote.html" class="btn">Share Your Thoughts</a>
+      <a href="Home.html" class="btn secondary">Back to Home</a>
     </div>
+  </div>
+
+  <!-- Live Article Section -->
+  <div class="random-article-card fade-in fade-in-7">
+    <h3>Learn More About Bioprinting</h3>
+    <p>Here’s a recent article you might find interesting:</p>
+    <div id="random-article" class="random-article-link">Loading...</div>
+  </div>
+
+  <!-- NewsAPI Script -->
+  <script>
+    const apiKey = '8cf376d1c95940fa9752a045dc198c9b';
+    const fallbackArticle = {
+      title: "The Promise and Peril of Bioprinting Human Organs",
+      url: "https://www.scientificamerican.com/article/the-promise-and-peril-of-bioprinting-human-organs/"
+    };
+
+    async function fetchBioprintingArticles() {
+      const today = new Date();
+      const twelveMonthsAgo = new Date(today.setFullYear(today.getFullYear() - 1));
+      const fromDate = twelveMonthsAgo.toISOString().split('T')[0];
+
+      const query = [
+        '"bioprinting"',
+        '"3D printed organs"',
+        '"printed human tissue"',
+        '"biofabrication"',
+        '"organ printing"',
+        '"tissue engineering"',
+        '"regenerative medicine"',
+        '"bioprinted skin"',
+        '"bio-ink"'
+      ].join(' OR ');
+
+      const url = `https://newsapi.org/v2/everything?` +
+        `q=${encodeURIComponent(query)}&` +
+        `language=en&` +
+        `from=${fromDate}&` +
+        `sortBy=publishedAt&` +
+        `pageSize=10&` +
+        `apiKey=${apiKey}`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log("Total articles found:", data.totalResults);
+
+        const articleContainer = document.getElementById('random-article');
+
+        if (data.articles && data.articles.length > 0) {
+          const randomIndex = Math.floor(Math.random() * data.articles.length);
+          const article = data.articles[randomIndex];
+          articleContainer.innerHTML = `<a href="${article.url}" target="_blank">${article.title}</a>`;
+        } else {
+          articleContainer.innerHTML = `<a href="${fallbackArticle.url}" target="_blank">${fallbackArticle.title}</a>`;
+        }
+      } catch (error) {
+        console.error("Fetch error:", error);
+        document.getElementById('random-article').innerHTML =
+          `<a href="${fallbackArticle.url}" target="_blank">${fallbackArticle.title}</a>`;
+      }
+    }
+
+    window.onload = fetchBioprintingArticles;
+  </script>
 
 </body>
 </html>

@@ -1,67 +1,86 @@
 <!DOCTYPE html>
-<html>
-
-<script> 
-
-console.log("Hello bro"); 
-
-
-</script>
-
-
-
+<html lang="en">
 <head>
-    <title>Bioethics: The Cost of Innovation</title>
-    <link rel="stylesheet" href="style.css"> <!-- Linking external CSS file for styling -->
+  <meta charset="UTF-8">
+  <title>Bioethics: The Cost of Innovation</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <ul>
-    <li><a href="javascript:history.back()" class="navlink">Go Back</a> </li>
-            <li class="fade"><a href="Home.html">Home</a></li> <!-- Navigation link to Home page -->
-            <li><a href="about.html">About</a></li> <!-- Navigation link to About page -->
-            <li><a href="contact.html">Contact</a></li> <!-- Navigation link to Contact page -->
-        </ul>
-    </nav>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="javascript:history.back()" class="navlink">Go Back</a></li>
+      <li class="fade"><a href="Home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <!-- Hero Section with main heading and subheading -->
-    <div class="hero">
-        <h1>The Further We Innovate, The Further We Deviate</h1>
-        <p class="black">Exploring the ethical dilemmas of Bioprinting, Genome Editing, and Cybernetic Enhancements.</p>
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>The Further We Innovate, The Further We Deviate</h1>
+    <p class="black">Exploring the ethical dilemmas of Bioprinting, Genome Editing, and Cybernetic Enhancements.</p>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content-container">
+
+    <!-- Bioprinting -->
+    <div class="box-wrapper">
+      <div class="bg-image" id="bg1"></div>
+      <div class="content-box" id="box1">
+        <img src="Bioprint.jpeg" alt="Bioprinting">
+        <h2>Bioprinting</h2>
+        <p>Synthesizing body parts from scratch. Is this a cure or a step beyond humanity?</p>
+        <a href="learnbioprint.html">Learn More →</a>
+      </div>
     </div>
 
-    <!-- Content Section with individual content boxes -->
-    <div class="content-container">
-
-        <!-- Bioprinting Section -->
-        <div class="content-box">
-            <img src="Bioprint.jpeg" alt="Bioprinting"> <!-- Image representing bioprinting -->
-            <h2>Bioprinting</h2>
-            <p>Synthesizing body parts from scratch. Is this a cure or a step beyond humanity?</p>
-            <a href="learnbioprint.html">Learn More →</a> <!-- Link to learn more about bioprinting -->
-        </div>
-
-        <!-- Genome Editing Section -->
-        <div class="content-box">
-            <img src="Genes.jpeg" alt="Genome Editing"> <!-- Image representing genome editing -->
-            <h2>Genome Editing</h2>
-            <p>Modifying our very DNA. Do we remain human?</p>
-            <a href="learngenome.html">Learn More →</a> <!-- Link to learn more about genome editing -->
-        </div>
-
-        <!-- Cybernetics Section -->
-        <div class="content-box">
-            <img src="cybernetics.jpeg" alt="Cybernetic Enhancements"> <!-- Image representing cybernetics -->
-            <h2>Cybernetics</h2>
-            <p>Enhancing ourselves with technology. Are we still living, or just machines?</p>
-            <a href="learncybernetic.html">Learn More →</a> <!-- Link to learn more about cybernetics -->
-        </div>
-
+    <!-- Genome Editing -->
+    <div class="box-wrapper">
+      <div class="bg-image" id="bg2"></div>
+      <div class="content-box" id="box2">
+        <img src="Genes.jpeg" alt="Genome Editing">
+        <h2>Genome Editing</h2>
+        <p>Modifying our very DNA. Do we remain human?</p>
+        <a href="learngenome.html">Learn More →</a>
+      </div>
     </div>
+
+    <!-- Cybernetics -->
+    <div class="box-wrapper">
+      <div class="bg-image" id="bg3"></div>
+      <div class="content-box" id="box3">
+        <img src="cybernetics.jpeg" alt="Cybernetic Enhancements">
+        <h2>Cybernetics</h2>
+        <p>Enhancing ourselves with technology. Are we still living, or just machines?</p>
+        <a href="learncybernetic.html">Learn More →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Animation Script -->
+  <script>
+    const boxes = [document.getElementById('box1'), document.getElementById('box2'), document.getElementById('box3')];
+
+    boxes.forEach((box, index) => {
+      const bg = document.getElementById(`bg${index + 1}`);
+
+      // Fade out background
+      setTimeout(() => {
+        if (bg) bg.style.opacity = 0;
+      }, index * 1800); // delay between each image
+
+      // Then show content box
+      setTimeout(() => {
+        box.classList.add('visible');
+      }, index * 1800 + 800);
+    });
+  </script>
 
 </body>
-
 </html>

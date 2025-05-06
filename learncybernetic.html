@@ -1,58 +1,119 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <title>Cybernetics: What do we even consider as living?</title> <!-- Title of the page displayed in the browser tab -->
-    <link rel="stylesheet" href="learnmore.css"> <!-- Linking the external CSS file for styling -->
+  <meta charset="UTF-8">
+  <title>Cybernetics: What do we even consider as living?</title>
+  <link rel="stylesheet" href="learnmore.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the blurred boundaries between human and machine. Are cybernetic enhancements changing what it means to be alive?">
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="javascript:history.back()" class="navlink">Go Back</a> </li>
-            <li><a href="Home.html">Home</a></li> <!-- Link to the Home page -->
-            <li><a href="learnbioprint.html"> Bioprinting</a></li> <!-- Link to Bioprinting page -->
-            <li><a href="learngenome.html">Genome Editing</a></li> <!-- Link to Genome Editing page -->
-            <li class="fade"><a href="learncybernetic.html">Cybernetics</a></li> <!-- Current page is highlighted with "fade" class -->
-        </ul>
-    </nav>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="javascript:history.back()" class="navlink">Go Back</a></li>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="learnbioprint.html">Bioprinting</a></li>
+      <li><a href="learngenome.html">Genome Editing</a></li>
+      <li class="fade"><a href="learncybernetic.html">Cybernetics</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Container -->
+  <div class="content-container fade-in fade-in-1">
+    <h1 class="fade-in fade-in-2">Cybernetics: Are We Still Alive?</h1>
+    <img src="cybernetics.jpeg" class="feature-image fade-in fade-in-3" alt="Cybernetic Enhancements">
     
-    <!-- Main Content Container -->
-    <div class="content-container">
-        <h1>Cybernetics: Are We Still Alive?</h1> <!-- Page main heading -->
-        
-        <!-- Feature Image related to Cybernetics -->
-        <img src="cybernetics.jpeg" class="feature-image" alt="Cybernetic Enhancements"> <!-- Image representing cybernetic enhancements -->
-        
-        <!-- Introduction paragraph about cybernetics -->
-        <p>
-            Cybernetic enhancements bridge the gap between biology and technology, from bionic limbs to neural implants that enhance cognitive function. These innovations promise to restore lost abilities and expand human potential. But where do we draw the line?
-        </p>
+    <p class="fade-in fade-in-4">
+      Cybernetic enhancements bridge the gap between biology and technology, from bionic limbs to neural implants that enhance cognitive function. These innovations promise to restore lost abilities and expand human potential. But where do we draw the line?
+    </p>
 
-        <!-- Ethical question heading -->
-        <h2>Are We Redefining Humanity?</h2>
-        <p>
-            When machines become part of us, do we remain human? As we integrate technology deeper into our bodies and minds, we begin to alter the core of human experience. Cybernetics raises profound questions about identity, autonomy, and what it means to be alive.
-        </p>
+    <h2 class="fade-in fade-in-5">Are We Redefining Humanity?</h2>
+    <p class="fade-in fade-in-5">
+      When machines become part of us, do we remain human? As we integrate technology deeper into our bodies and minds, we begin to alter the core of human experience. Cybernetics raises profound questions about identity, autonomy, and what it means to be alive.
+    </p>
 
-        <!-- Blockquote for impactful quote -->
-        <blockquote>
-            "If our minds and bodies are editable, replaceable, and upgradable, do we lose the essence of what makes us human?"
-        </blockquote>
+    <blockquote class="fade-in fade-in-6">
+      "If our minds and bodies are editable, replaceable, and upgradable, do we lose the essence of what makes us human?"
+    </blockquote>
 
-        <!-- Ethical considerations heading -->
-        <h2>The Ethical Horizon</h2>
-        <p>
-            Will cybernetic enhancements create a world divided between the enhanced and the natural? Will we become dependent on machines to compete, survive, or even feel whole? The path forward is filled with possibilities—and dilemmas.
-        </p>
+    <h2 class="fade-in fade-in-6">The Ethical Horizon</h2>
+    <p class="fade-in fade-in-7">
+      Will cybernetic enhancements create a world divided between the enhanced and the natural? Will we become dependent on machines to compete, survive, or even feel whole? The path forward is filled with possibilities—and dilemmas.
+    </p>
 
-        <!-- Button container with action links -->
-        <div class="button-container">
-            <a href="Cybervote.html" class="btn">Share Your Thoughts</a> <!-- Link to share thoughts or vote on the topic -->
-            <a href="Home.html" class="btn secondary">Back to Home</a> <!-- Link to return to the home page -->
-        </div>
+    <!-- Buttons -->
+    <div class="button-container fade-in fade-in-7">
+      <a href="Cybervote.html" class="btn">Share Your Thoughts</a>
+      <a href="Home.html" class="btn secondary">Back to Home</a>
     </div>
+  </div>
+
+  <!-- Live Article Section -->
+  <div class="random-article-card fade-in fade-in-7">
+    <h3>Learn More About Cybernetics</h3>
+    <p>Here’s a recent article you might find interesting:</p>
+    <div id="random-article" class="random-article-link">Loading...</div>
+  </div>
+
+  <!-- NewsAPI Integration -->
+  <script>
+    const apiKey = '8cf376d1c95940fa9752a045dc198c9b';
+    const fallbackArticle = {
+      title: "How Cyborg Technology Is Shaping the Future of Humanity",
+      url: "https://www.newscientist.com/article-topic/cyborgs/"
+    };
+
+    async function fetchCyberneticsArticles() {
+      const today = new Date();
+      const twelveMonthsAgo = new Date(today.setFullYear(today.getFullYear() - 1));
+      const fromDate = twelveMonthsAgo.toISOString().split('T')[0];
+
+      const query = [
+        '"cybernetics"',
+        '"neural implants"',
+        '"brain-machine interfaces"',
+        '"cyborgs"',
+        '"bionic limbs"',
+        '"human enhancement"',
+        '"augmented humans"',
+        '"neurotechnology"',
+        '"mind-machine interfaces"'
+      ].join(' OR ');
+
+      const url = `https://newsapi.org/v2/everything?` +
+        `q=${encodeURIComponent(query)}&` +
+        `language=en&` +
+        `from=${fromDate}&` +
+        `sortBy=publishedAt&` +
+        `pageSize=10&` +
+        `apiKey=${apiKey}`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log("Total articles found:", data.totalResults);
+
+        const articleContainer = document.getElementById('random-article');
+
+        if (data.articles && data.articles.length > 0) {
+          const randomIndex = Math.floor(Math.random() * data.articles.length);
+          const article = data.articles[randomIndex];
+          articleContainer.innerHTML = `<a href="${article.url}" target="_blank">${article.title}</a>`;
+        } else {
+          articleContainer.innerHTML = `<a href="${fallbackArticle.url}" target="_blank">${fallbackArticle.title}</a>`;
+        }
+      } catch (error) {
+        console.error("Fetch error:", error);
+        document.getElementById('random-article').innerHTML =
+          `<a href="${fallbackArticle.url}" target="_blank">${fallbackArticle.title}</a>`;
+      }
+    }
+
+    window.onload = fetchCyberneticsArticles;
+  </script>
 
 </body>
 </html>

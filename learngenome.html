@@ -1,58 +1,116 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <title>Genome Editing: Redefining Humanity?</title> <!-- Title of the page displayed in the browser tab -->
-    <link rel="stylesheet" href="learnmore.css"> <!-- Linking the external CSS file for styling -->
+  <meta charset="UTF-8">
+  <title>Genome Editing: Redefining Humanity?</title>
+  <link rel="stylesheet" href="learnmore.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CRISPR, genetic enhancement, and the future of the human genome: explore the promises and ethical dilemmas of genome editing.">
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="javascript:history.back()" class="navlink">Go Back</a> </li>
-            <li><a href="Home.html">Home</a></li> <!-- Link to the Home page -->
-            <li><a href="learnbioprint.html">Bioprinting</a></li> <!-- Link to Bioprinting page -->
-            <li class="fade"><a href="learngenome.html">Genome Editing</a></li> <!-- Current page is highlighted with "fade" class -->
-            <li><a href="learncybernetic.html">Cybernetics</a></li> <!-- Link to Cybernetics page -->
-        </ul>
-    </nav>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="javascript:history.back()" class="navlink">Go Back</a></li>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="learnbioprint.html">Bioprinting</a></li>
+      <li class="fade"><a href="learngenome.html">Genome Editing</a></li>
+      <li><a href="learncybernetic.html">Cybernetics</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Container -->
+  <div class="content-container fade-in fade-in-1">
+    <h1 class="fade-in fade-in-2">Genome Editing: Redefining Humanity?</h1>
+    <img src="Genes.jpeg" class="feature-image fade-in fade-in-3" alt="Genome Editing Visualization">
     
-    <!-- Main Content Container -->
-    <div class="content-container">
-        <h1>Genome Editing: Redefining Humanity?</h1> <!-- Page main heading -->
-        
-        <!-- Feature Image related to Genome Editing -->
-        <img src="Genes.jpeg" class="feature-image" alt="Genome Editing Visualization"> <!-- Image displaying genome editing concept -->
-        
-        <!-- Introduction paragraph about genome editing -->
-        <p>
-            Genome editing allows us to rewrite the very code of life. CRISPR and other genetic tools enable us to correct mutations, eliminate hereditary diseases, and even enhance human traits. But should we?
-        </p>
+    <p class="fade-in fade-in-4">Genome editing allows us to rewrite the very code of life. CRISPR and other genetic tools enable us to correct mutations, eliminate hereditary diseases, and even enhance human traits. But should we?</p>
 
-        <!-- Ethical question heading -->
-        <h2>The Ethics of Genetic Perfection</h2>
-        <p>
-            If we can engineer intelligence, strength, and longevity, will natural human diversity disappear? Will we create a new social divide—those who are genetically enhanced and those who are not?
-        </p>
+    <h2 class="fade-in fade-in-5">The Ethics of Genetic Perfection</h2>
+    <p class="fade-in fade-in-5">If we can engineer intelligence, strength, and longevity, will natural human diversity disappear? Will we create a new social divide—those who are genetically enhanced and those who are not?</p>
 
-        <!-- Blockquote for impactful quote -->
-        <blockquote>
-            "By mastering our own DNA, do we take control of evolution, or do we risk losing what makes us human?"
-        </blockquote>
+    <blockquote class="fade-in fade-in-6">"By mastering our own DNA, do we take control of evolution, or do we risk losing what makes us human?"</blockquote>
 
-        <!-- Future implications heading -->
-        <h2>The Future: A Designed Species?</h2>
-        <p>
-            As genome editing advances, are we on the brink of creating a tailored human race? If we eliminate flaws, do we erase individuality? The boundaries between medicine and modification are fading.
-        </p>
+    <h2 class="fade-in fade-in-6">The Future: A Designed Species?</h2>
+    <p class="fade-in fade-in-7">As genome editing advances, are we on the brink of creating a tailored human race? If we eliminate flaws, do we erase individuality? The boundaries between medicine and modification are fading.</p>
 
-        <!-- Button container with action links -->
-        <div class="button-container">
-            <a href="Editvote.html" class="btn">Share Your Thoughts</a> <!-- Link to share thoughts or vote on the topic -->
-            <a href="Home.html" class="btn secondary">Back to Home</a> <!-- Link to return to the home page -->
-        </div>
+    <!-- Buttons -->
+    <div class="button-container fade-in fade-in-7">
+      <a href="Editvote.html" class="btn">Share Your Thoughts</a>
+      <a href="Home.html" class="btn secondary">Back to Home</a>
     </div>
+  </div>
+
+  <!-- Live Article Section -->
+  <div class="random-article-card fade-in fade-in-7">
+    <h3>Learn More About Genome Editing</h3>
+    <p>Here’s a recent article you might find interesting:</p>
+    <div id="random-article" class="random-article-link">Loading...</div>
+  </div>
+
+  <!-- NewsAPI Integration -->
+  <script>
+    const apiKey = '8cf376d1c95940fa9752a045dc198c9b';
+    const fallbackArticle = {
+      title: "The CRISPR Revolution and the Future of Human Evolution",
+      url: "https://www.nature.com/articles/d41586-020-03417-8"
+    };
+
+    async function fetchGenomeEditingArticles() {
+      const today = new Date();
+      const twentyFourMonthsAgo = new Date(today.setFullYear(today.getFullYear() - 2));
+      const fromDate = twentyFourMonthsAgo.toISOString().split('T')[0];
+
+      const query = [
+        '"genome editing"',
+        '"CRISPR"',
+        '"gene editing"',
+        '"genetic enhancement"',
+        '"designer babies"',
+        '"germline editing"',
+        '"DNA rewriting"',
+        '"gene drive"',
+        '"genetic modification"',
+        '"heritable genome editing"',
+        '"CRISPR babies"',
+        '"genetic engineering"',
+        '"genomic medicine"',
+        '"gene therapy"'
+      ].join(' OR ');
+
+      const url = `https://newsapi.org/v2/everything?` +
+        `q=${encodeURIComponent(query)}&` +
+        `language=en&` +
+        `from=${fromDate}&` +
+        `sortBy=publishedAt&` +
+        `pageSize=10&` +
+        `apiKey=${apiKey}`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log("Total articles found:", data.totalResults);
+
+        const articleContainer = document.getElementById('random-article');
+
+        if (data.articles && data.articles.length > 0) {
+          const randomIndex = Math.floor(Math.random() * data.articles.length);
+          const article = data.articles[randomIndex];
+          articleContainer.innerHTML = `<a href="${article.url}" target="_blank">${article.title}</a>`;
+        } else {
+          articleContainer.innerHTML = `<a href="${fallbackArticle.url}" target="_blank">${fallbackArticle.title}</a>`;
+        }
+      } catch (error) {
+        console.error("Fetch error:", error);
+        document.getElementById('random-article').innerHTML =
+          `<a href="${fallbackArticle.url}" target="_blank">${fallbackArticle.title}</a>`;
+      }
+    }
+
+    window.onload = fetchGenomeEditingArticles;
+  </script>
 
 </body>
 </html>

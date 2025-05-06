@@ -199,3 +199,74 @@ html {
     background-color: #005bb5;
 }
 
+.random-article-card {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .random-article-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .random-article-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.6em;
+    color: #0071e3;
+  }
+  
+  .random-article-link a {
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1d1d1f;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .random-article-link a:hover {
+    color: #0071e3;
+    border-color: #0071e3;
+  }
+  
+  /* Fade-in effect for text blocks */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards;
+  }
+  
+  /* Slight delay for sequential elements */
+  .fade-in-delay {
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in forwards;
+  }
+  
+ 
+  /* Fade-in keyframes */
+@keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+  
+  .fade-in-1  { animation-delay: 0.2s; }
+  .fade-in-2  { animation-delay: 1.5s; }
+  .fade-in-3  { animation-delay: 3s; }
+  .fade-in-4  { animation-delay: 4.5s; }
+  .fade-in-5  { animation-delay: 6s; }
+  .fade-in-6  { animation-delay: 7.5s; }
+  .fade-in-7  { animation-delay: 9s; }
+  
+  

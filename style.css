@@ -1,120 +1,198 @@
-/* General body styles */
+/* === GENERAL STYLES === */
 body {
-  font-family: Arial, sans-serif; /* Sets the font for the entire page */
-  margin: 0; /* Removes default margin */
-  padding: 0; /* Removes default padding */
-  background-color: #f5f5f7; /* Light gray background color */
-  color: #1d1d1f; /* Dark text color for readability */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #1d1d1f;
 }
 
-/* Navigation bar styling */
+/* === NAVBAR === */
 .navbar {
-  position: sticky; /* Makes the navbar sticky */
-  top: 0; /* Ensures the navbar stays at the top of the page */
-  z-index: 1000; /* Ensures the navbar stays on top of other content when scrolling */
-  display: flex; /* Flexbox layout for navbar */
-  justify-content: center; /* Centers the navbar items horizontally */
-  background-color: #fff; /* White background for the navbar */
-  padding: 15px 0; /* Vertical padding for the navbar */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Navbar list styles */
 .navbar ul {
-  display: flex; /* Flexbox for horizontal layout */
-  padding: 0; /* Removes default padding */
-  margin: 0; /* Removes default margin */
-  list-style: none; /* Removes bullets from list */
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-/* Navbar list item spacing */
 .navbar li {
-  margin: 0 20px; /* Horizontal spacing between list items */
+  margin: 0 20px;
 }
 
-/* Navbar link styling */
 .navbar a {
-  text-decoration: none; /* Removes underline from links */
-  color: #333; /* Default dark color for text */
-  font-weight: bold; /* Bold text for links */
-  transition: color 0.3s; /* Smooth color transition when hovered */
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-/* Navbar link hover effect */
 .navbar a:hover {
-  color: #0071e3; /* Changes link color to blue on hover */
+  color: #0071e3;
 }
 
-/* Hero section styling */
-.hero {
-  text-align: center; /* Centers text in the hero section */
-  padding: 100px 20px; /* Large top and bottom padding for emphasis */
-  color: #0071e3; /* Blue text color for hero section */
-}
-
-/* Hero section heading styling */
-.hero h1 {
-  font-size: 3em; /* Large font size for the main heading */
-  margin: 0; /* Removes default margin */
-}
-
-/* Hero section paragraph styling */
-.hero p {
-  font-size: 1.5em; /* Medium font size for paragraph */
-  margin-top: 10px; /* Space between heading and paragraph */
-}
-
-/* Content container styling */
-.content-container {
-  display: flex; /* Flexbox for content layout */
-  justify-content: center; /* Centers content horizontally */
-  flex-wrap: wrap; /* Allows content to wrap to new lines on smaller screens */
-  gap: 30px; /* Adds space between content boxes */
-  padding: 50px 20px; /* Padding for the content area */
-}
-
-/* Content box styling */
-.content-box {
-  background: white; /* White background for each content box */
-  padding: 20px; /* Padding inside the box */
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  width: 300px; /* Fixed width for each content box */
-  text-align: center; /* Centers text inside each content box */
-  transition: transform 0.3s; /* Smooth transformation on hover */
-}
-
-/* Content box hover effect */
-.content-box:hover {
-  transform: translateY(-10px); /* Moves content box slightly up on hover */
-}
-
-/* Content box image styling */
-.content-box img {
-  width: 100%; /* Makes image fill the width of the content box */
-  border-radius: 10px; /* Rounds the corners of the image */
-}
-
-/* Content box heading styling */
-.content-box h2 {
-  font-size: 1.5em; /* Font size for headings inside content boxes */
-  margin: 15px 0; /* Vertical space around the heading */
-}
-
-/* Content box link styling */
-.content-box a {
-  text-decoration: none; /* Removes underline from the link */
-  font-weight: bold; /* Bold text for the link */
-  color: #0071e3; /* Blue color for the link */
-}
-
-/* Custom class for black-colored text */
-.black {
-  color: black; /* Applies black color to text */
-}
-
-/* Fade effect class for opacity */
 .fade {
-  opacity: 50%; /* Reduces opacity of elements with this class */
+  opacity: 50%;
+}
+
+/* === HERO === */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  color: #0071e3;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+.black {
+  color: black;
+}
+
+/* === CONTENT LAYOUT === */
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  padding: 50px 20px;
+}
+
+.box-wrapper {
+  position: relative;
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === BACKGROUND IMAGES === */
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  transition: opacity 1s ease;
+  z-index: 1;
+}
+
+#bg1 {
+  background-image: url('bio.jpg');
+  opacity: .6;
+}
+
+#bg2 {
+  background-image: url('genetic.jpg');
+  opacity: 0.6;
+}
+
+#bg3 {
+  background-image: url('cyber.jpg');
+  opacity: 0.6; /* starts semi-transparent */
+}
+
+/* === CONTENT BOX === */
+.content-box {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.content-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-box img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.content-box h2 {
+  font-size: 1.5em;
+  margin: 15px 0;
+}
+
+.content-box p {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.content-box a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0071e3;
+}
+
+/* === HOVER EFFECTS === */
+#box1:hover {
+  box-shadow: 0 0 20px #00bfffaa;
+}
+#box2:hover {
+  box-shadow: 0 0 20px #ffcc00aa;
+}
+#box3:hover {
+  box-shadow: 0 0 25px #ff0033cc;
+}
+
+/* Contact form inputs */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+/* Submit button */
+.btn {
+  background-color: #0071e3;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #005bb5;
 }
 

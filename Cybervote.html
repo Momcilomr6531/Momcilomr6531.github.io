@@ -1,57 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybernetics Vote</title>
-    <link rel="stylesheet" href="vote.css">
-    <script>
-        // Initialize vote counts for both options
-        let votes = { advocate: 0, against: 0 };
-
-        // Function to handle voting logic
-        function vote(option) {
-            // Increment the selected vote option
-            votes[option]++;
-            
-            // Update the displayed vote counts for both options
-            document.getElementById('advocate-count').innerText = votes.advocate;
-            document.getElementById('against-count').innerText = votes.against;
-
-            // Optional: Provide feedback after voting
-            document.getElementById('vote-feedback').innerText = "Thank you for voting!";
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cybernetics Vote</title>
+  <link rel="stylesheet" href="vote.css" />
 </head>
+
 <body>
-    <!-- Navbar for easy navigation -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="javascript:history.back()" class="navlink">Go Back</a> </li>
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="learncybernetic.html">Back to Cybernetics</a></li>
-        </ul>
-    </nav>
-    
-    <!-- Main content for the voting page -->
-    <div class="content-container vote-container">
-        <h1>Do You Support Cybernetics?</h1>
-        <p>Cast your vote below:</p>
 
-        <!-- Buttons for voting options -->
-        <div class="button-container">
-            <button class="btn" onclick="vote('advocate')">✅ Advocate</button>
-            <button class="btn" onclick="vote('against')">❌ Against</button>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="javascript:history.back()">Go Back</a></li>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="learncybernetic.html">Back to Cybernetics</a></li>
+    </ul>
+  </nav>
 
-        <!-- Display the current vote count for both options -->
-        <div class="vote-results">
-            <p>✅ Advocate: <span id="advocate-count">0</span></p>
-            <p>❌ Against: <span id="against-count">0</span></p>
-        </div>
+  <!-- Voting Section -->
+  <div class="vote-container">
+    <h1>Do You Support Cybernetics?</h1>
+    <p class="subtitle">Your vote matters. Help us understand public sentiment.</p>
 
-        <!-- Feedback message after voting -->
-        <p id="vote-feedback" class="vote-feedback"></p>
+
+    <!-- Vote Buttons -->
+    <div class="button-container">
+      <button class="btn advocate" onclick="submitVote('advocate')">✅ Advocate</button>
+      <button class="btn against" onclick="submitVote('against')">❌ Against</button>
     </div>
+
+    <!-- Vote Results -->
+    <div class="vote-results">
+      <p>✅ Advocate: <span id="advocate-count">0</span></p>
+      <div class="progress-bar">
+        <div class="bar blue" id="advocate-bar" style="width: 0%"></div>
+      </div>
+
+      <p>❌ Against: <span id="against-count">0</span></p>
+      <div class="progress-bar">
+        <div class="bar red" id="against-bar" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <p id="vote-feedback" class="vote-feedback"></p>
+  </div>
+
+  <!-- Voting Logic -->
+  <script>
+    let votes = { advocate: 0, against: 0 };
+  
+    // Retrieve previous vote
+    const previousVote = localStorage.getItem("voteChoice");
+    if (previousVote) {
+      votes[previousVote]++;
+      updateDisplay();
+    }
+  
+    function submitVote(choice) {
+      const previous = localStorage.getItem("voteChoice");
+  
+      // Undo previous vote
+      if (previous) {
+        votes[previous] = Math.max(0, votes[previous] - 1);
+      }
+  
+      // Store new vote
+      votes[choice]++;
+      localStorage.setItem("voteChoice", choice);
+  
+      updateDisplay();
+      document.getElementById("vote-feedback").innerText = "Your vote has been updated.";
+    }
+  
+    function updateDisplay() {
+      const total = votes.advocate + votes.against;
+      const advocatePercent = total ? (votes.advocate / total) * 100 : 0;
+      const againstPercent = total ? (votes.against / total) * 100 : 0;
+  
+      document.getElementById("advocate-count").innerText = votes.advocate;
+      document.getElementById("against-count").innerText = votes.against;
+  
+      document.getElementById("advocate-bar").style.width = advocatePercent + "%";
+      document.getElementById("against-bar").style.width = againstPercent + "%";
+    }
+  </script>
+  
 </body>
 </html>
