@@ -92,11 +92,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
   transition: opacity 2.5s ease;
+  border-radius: 20px;
   z-index: 1;
 }
 
@@ -117,7 +118,7 @@ body {
 .content-box {
   background: white;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
   text-align: center;
@@ -139,13 +140,18 @@ body {
   transform: translateY(0);
 }
 
+/* === IMAGES === */
 .content-box img {
-  width: 100%;
-  max-height: 180px;
-  object-fit: contain;
-  margin-bottom: 15px;
+  width: auto;
+  height: 180px;
+  max-width: 100%;
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto 15px;
+  object-fit: cover;
 }
 
+/* === TEXT STYLING === */
 .content-box h2 {
   font-size: 1.5em;
   margin: 15px 0 10px;
@@ -174,9 +180,4 @@ body {
 #box3:hover {
   box-shadow: 0 0 25px #ff0033cc;
   transform: translateY(-5px);
-}
-
-.rounded-img {
-  border-radius: 15px;
-  overflow: hidden;
 }
